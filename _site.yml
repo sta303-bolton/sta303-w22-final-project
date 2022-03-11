@@ -1,0 +1,12 @@
+name: "sta303-w22-final-project"
+title: "STA303/1002 Winter 22 Final Project"
+description: |
+  STA303/1002 Winter 22 Final Project
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+output: distill::distill_article

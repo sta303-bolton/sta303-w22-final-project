@@ -1,0 +1,19 @@
+---
+title: "STA303/1002 Winter 22 Final Project"
+description: |
+  Instruction for the STA303/1002 final project (and information to help prospective employers/clients, interested 2nd cousins and whoever else better understand student achievements and skills).
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating websites with Distill at:
+# https://rstudio.github.io/distill/website.html
+
+# Learn more about publishing to GitHub Pages at:
+# https://rstudio.github.io/distill/publish_website.html#github-pages
+
+```
+
+
