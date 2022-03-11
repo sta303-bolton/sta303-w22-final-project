@@ -1,0 +1,55 @@
+---
+title: "Client emails"
+output: 
+  distill::distill_article:
+    toc: true
+    toc_depth: 3
+---
+
+# Email 1 {#email1}
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/email1.png")
+```
+
+## Text for screen readers
+
+Hi,
+
+Thanks again for the great work on the *Small Steps* project last year. I'm reaching out with another piece of work I'm hoping you can take on.
+
+I've included some information below, but the big idea is that we want some specialist statistics support to help us better understand issues around our new lines of wearables fitness trackers/smart watches and our customers.
+
+**Company background:** MINGAR started out making GPS units for marine vehicles and military personnel, before branching out to personal GPS units for runners in the early 2000s. Over the years, we have developed a number of products aimed at outdoor recreation, including high-end fitness tracking wearable devices.
+
+**Competition:** Traditionally, our main competitor in the fitness tracker space is Bitfit, a company that has exclusively focused on personal fitness tracking devices. Their devices are smaller, the price point is lower, and their app currently offers more insights. They have designed and marketed their product for the average consumer who is interested in living a healthy lifestyle.
+
+**Situation:** Wearables are a growing market. We want to not only grow with that market, but also gain market share. To compete with Bitfit, we've recently expanded our product offerings. We've added the 'Active' and 'Advance' lines at a more approachable price point for the average 
+
+We'd like to bring you on board to help us with some key insights for marketing and product considerations. Some of our key questions are below. I'd also like to highlight that ethical treatment of our customer data is a key part of our business values, and it would be great to emphasize these considerations in your report.
+
+**Questions:**
+
+1.  Our **marketing team** wants information to inform their strategy​ in the Canadian market​. Who are our new customers? How are buyers of the newer and more affordable 'Active' and 'Advance' products different to our traditional customers?
+
+2.  Our **social media team** is currently tracking a trend in complaints that our devices are performing poorly for users with darker skin, particularly with respect to **sleep scores**. Could you investigate this? We don't collect data on race or ethnicity, but want to ensure we're taking this concern seriously as having our devices labeled as 'racist' is would be very damaging and of course not in line with our values as a company.  
+
+Obviously, this data is sensitive and of commercial significance. NDAs will be required from anyone working on the project.
+
+**I'll be able to provide:** 
+
+-   Customer-level data (age, gender, etc.)
+
+-   Customer-device linkage data
+
+-   Links to a resource for device data (<https://fitnesstrackerinfohub.netlify.app/>)
+
+Let me know if you have any questions, and if you're ready to get the ball rolling, please complete this NDA (docx or pdf) and submit them through our NDA portal. After that, I'll reach out with the data. Would be great if the final deliverable could have a summary targeted for the Board of Directors, as well as a more technical piece for our in-house analyst team to look over as well.
+
+I assume same fee structure as last time applies? That will be fine on our end. Will pay hourly with a cap at 40 hours unless otherwise discussed.
+
+Best,
+
+Roberta Fettucine\
+
+Product Manager, Wearables \| MINGAR

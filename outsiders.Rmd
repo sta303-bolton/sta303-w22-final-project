@@ -1,0 +1,97 @@
+---
+title: "For interested outsiders"
+output: 
+  distill::distill_article:
+    toc: true
+    toc_depth: 3
+---
+
+
+If you're reading this, you may have been directed to this link by a former student of [mine](https://www.lizabolton.com/) in order to provide you with more information about the large project they completed in my course. This page doesn't have information about specific student projects, but should give you a sense of the kinds of skills students who completed this project will have. You may wish to [skip directly to the skills description](#skills).
+
+***One sentence description:** Students received data as well as web scraping, accessing an API and retrieving licensed data, and then used these to merge, wrangle, visualize, summarize and model data on fitness tracker customers to meet a client brief, and reported on their methods and findings appropriately for a general executive audience and, separately, for a technical audience.*
+
+
+# What is STA303/1002 about?
+
+STA303: Methods of Data Analysis II is a course delivered by the [Department of Statistical Sciences at the University of Toronto](https://www.statistics.utoronto.ca/). (STA1002 is the code used for graduate students from other departments.)
+
+In Winter 2022 (January to April), STA303 remained completely online due to COVID-19. Students rose to this challenge remarkably well, but it was a significant challenge to wellbeing and focus, none-the-less.
+
+STA303 is a communication- and application-focused course where students learn:
+
+- to merge, wrangle, summarize and visualize data,
+- about several statistical modelling approaches and how to choose and implement these, as well as
+- how to write about their methods and results for a range of audiences.
+
+The models covered include: linear mixed models, generalized linear models, generalized linear mixed models and generalized additive models.
+
+# Task summary
+
+Full information on this assessment can be found on the rest of this site, but here is a quick overview. The project was worth 45% of students’ final grades and students could choose to complete it individually or as a team. Teamwork was recommended, but the task was the same either way. Teams were not required as students had good reasons for completing individually, such as being located in a challenging time zone, lack of access to internet appropriate for calling, or other caring or work obligations that made scheduling meetings untenable.
+
+Students were consulting for MINGAR, analyzing customer data for their Canadian fitness tracker/watch market. __Note: MINGAR isn’t a real company,__ This level of detailed personal data would be innapropriate to share with a class of 600 students. I also wanted students to have a project where they could share (most of) the code, data and outputs in their portfolios, on GitHub, etc. That said, this dataset was simulated based on real research and trends and draws on my own experiences running a small company.
+
+Each team or individual created a consulting company for the purposes of this activity and to register their group/individual status completed a pseudo-NDA, of which the only real part was reminding them that they had already agreed to several codes of conduct as part of their enrolment at U of T and made clear my expectations of their professionalism. It also gave them a chance to familiarize themselves with a common requirement for consulting.
+
+### The deliverable
+
+The final submission was a report that included:
+
+-   a cover page
+-   an executive summary (2 pages max)
+-   a technical report
+-   consultant bio(s) (note: these bios were meant to be 'fun' illustrations of their aspirations and interests and are not necessarily accurate), and
+-   a company ethics statement.
+
+Students were tasked to answer the research questions posed by the client, communicate their findings in ways appropriate to the audience for each section of the report, choose appropriate methods and create professional visualizations and tables to explain their results.
+
+Reports were written in a reproducible R Markdown file (a code and text file type popular for use with the programming language R). Students were provided with a basic template that they could choose to use.
+
+## Skills demonstrated {#skills}
+
+Students who completed this project to a reasonable standard can do the following (organized under broad headings):
+
+## Statistical reasoning and knowledge
+
+- Develop relevant research questions that can be explored/answered statistically.
+- Merge large datasets programmatically and wrangle them appropriately to create meaningful new variables, where relevant.
+- Choose and create appropriate data visualizations and summaries.
+- Choose appropriate statistical models and check their assumptions.
+- Justify choice of methods in writing.
+- Accurately describe results, including size and direction of effect through confidence intervals, where relevant.
+- Identify and discuss strengths and limitations of statistical approaches.
+
+## Ethical professional practice
+- Understand and put into their own words aspects of the Statistical Society of Canada Code of Ethical Statistical Practice. (Demonstrated through the code of conduct for your ‘company’.)
+- Report findings truthfully and accurately, even when they are not what a stakeholder ‘wants to hear’.
+- Identify potential sources of algorithmic bias.
+- Working with and maintaining data privacy of licensed datasets. 
+- Making thoughtful choices when dealing with social data (gender, ethnicity, age, etc.).
+- Demonstrate appropriate ethical practices when webscraping.
+- Demonstrate appropriate ehtical practices when accesing an API.
+- Demonstrate basic familiarity with the concept of non-disclosure agreement.
+
+## Modern data practices
+- Access an API to retrieve a large volume of data.
+- Scrape a table from a website into a usable dataset.
+- Use a licensed postal code conversion file for data linkage.
+
+## Writing
+
+-   Write appropriately for different audiences, i.e. an executive summary for executives with limited statistical knowledge and a technical report for fellow analysts (though not assuming knowledge of R).
+-   Format a report with a logical structure.
+-   Work within length constraints to prioritize expressing the key information from a series of analyses.
+
+## Programming
+
+-   Create reproducible code and suppress code appropriately in a final 'human-readable' report. I.e., no error outputs in the final PDF or raw variable names used.
+-   Use data wrangling and visualization functions and packages (largely `dplyr` and `ggplot2`.
+-   Comment on and organize code logically.
+
+## General
+
+-   Construct and label tables and figures professionally.
+-   Be resilient in the face of challenges, especially when it comes to troubleshooting code bugs.
+-   Ask for help when they need it while also taking responsibility for their work.
+-   Organize a data and analysis project with multiple required files and dataset.

@@ -2,18 +2,136 @@
 title: "STA303/1002 Winter 22 Final Project"
 description: |
   Instruction for the STA303/1002 final project (and information to help prospective employers/clients, interested 2nd cousins and whoever else better understand student achievements and skills).
-site: distill::distill_website
+
+output: 
+  distill::distill_article:
+    toc: true
+    toc_depth: 3
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
-
-# Learn more about publishing to GitHub Pages at:
-# https://rstudio.github.io/distill/publish_website.html#github-pages
-
 ```
+
+_Last updated:_ `r format(Sys.time(), '%Y-%m-%d %H:%S')`
+
+Your final project for STA303/1002 is a consulting project for MINGAR. You will be analyzing data about their customers and creating a report appropriate for the Board of Directors.
+
+_Note: MINGAR isn't a real company, it would be massively reckless to provide 600 people with customer data with this level of detail. It would be very easy to identify individuals from data like this. That said, this dataset is based on real research and trends, and my own experiences running a small consulting company._
+
+```{r, fig.align="center"}
+knitr::include_graphics("images/mingar-logo-small.png")
+```
+
+
+# Submission information
+
++--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **In formation**                     | **Note**                                                                                                                                              |
++======================================+=======================================================================================================================================================+
+| Name                                 | Final project                                                                                                                                         |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Type (Main, Mini or Basket)          | Main                                                                                                                                                  |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Value                                | 45%                                                                                                                                                   |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Due                                  | Thursday, April 7, 2022 at 3:03 p.m. ET for 2% pt bonus. Submissions accepted until Monday, April 11, 2022 at 3:03 p.m.                                |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Submission instruction               | Submission: Via [Markus](https://markus-ds.teach.cs.toronto.edu/)                                                                                                            |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Acc ommodations and extension policy | There are no routine extensions granted for the final project. In exceptional circumstances, you can work with your College Registrar and me on this. |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+# What's the deliverable?
+
+Your final submission will be a report that includes: 
+
+-   a cover page 
+-   an executive summary 
+-   a technical report 
+-   consultant bio(s) and company ethics statement
+-   code appendix that specifically documents how the web scraping, API and census work was done
+
+You will need to further develop and answer the **research questions** relevant to the client, communicate in ways appropriate to the **audience**  for each section of the report, choose **appropriate methods**  and create **professional visualisations and tables**  to explain your results.
+
+Your report must be written in a **reproducible**  Rmd, that Knits to __PDF__, and you will submit the PDF, Rmd and any images/extra data to MarkUs for the reproducibility component of your mark.
+
+I will be providing a **template** for you to use.
+
+# Timeline 
+
+__All times are 3:03 p.m. ET.__
+
+- __March 18:__ Register your group/individual status by submit your company name, group members (may just be you)and NDA to the [form](https://forms.office.com/r/893zttwbsa).
+
+- __April 4:__ Beginning of 'project focus' week. No other required tasks or new content.
+
+- __April 7:__ deadline to submit for 2 percentage point BONUS
+
+- __April 11:__ final deadline to submit. 
+
+
+# Penalties to AVOID
+
+- 5 percentage point penalty for failing to correctly register as an individual/group by the deadline.
+  - This include providing CORRECT details for all group members that will allow me to link you on MarkUs. (Your 'Contractor ID' is your UTORid!! Please don't get this wrong.)
+  - There should be 1 PDF PER PERSON, so a team of 3 should submit 3 NDA files to the form (i.e., don't merge).
+  
+- 5 percentage point penalty for not submitting the Rmd that creates your PDF (this also applies if your PDF submission is made in Word etc.)  
+
+# Steps
+
+## Step 1: Read the first client email and decide if you're working as a group or individual 
+
+
+- You can check the emails from your client [here](#email1).   
+- You can work on your project alone or with up to three other students (regardless of section) for a group of __four total students__.  
+- The section you are enrolled in does not matter, you may work with students across sections/within the same section, etc.
+- You can find teammates with [Piazza](https://piazza.com/class/kx47tj4fmy65dg?cid=5).
+- My hope is that your final deliverable will be something you could include in your portfolio, so perhaps make sure all teammates are okay with publishing this publically at the end.
+
+## Step 2: Create a consulting company
+
+- There are no criteria other than the name should be __professional__ (i.e., no rude words, resist overly obvious puns) and needs to be typable in ‘Latin script’, i.e., __the letters A to Z__  (with hyphens/accents if needed, just be careful the symbols can be Knit to pdf.)
+
+## Step 3: Sign your NDAs 
+
+-   Non-disclosure agreements (NDAs) are a common legal agreement that consultants often enter into. It will outline who owns what, what can and cannot be shared publicly and a range of other legal points.
+
+-   For the purposes of this class, you don't have to worry about the 'legal-ese' and what you're actually agreeing to, because you are NOT actually agreeing to anything. BUT I do think you should see how much you can understand as it is realistic that you might have to comprehend and sign a document like this in future, as a professional.
+
+-   If you're working in a team, __each member of the team must sign their own version__ and then ONE member will submit ALL the individual PDFS on behalf of the team.
+
+    -   Note, if you have trouble contacting a remember and getting their form, this may be a sign they won't be easy to work with on the project. Likewise, please don't be *that* team member that everyone complains about for not doing any work.
+
+    -   If there are team dynamic issues, LET ME KNOW ASAP, I can help you work on a solution, or split up the team (that won't be penalized).
+    
+<yellow>[PDF version]()</yellow>
+
+<yellow>[DOCX version]()</yellow>
+
+## Step 4: Submit your NDAs (and through this, register as group or individual) 
+
+-   By Friday, March 18 at 3:03 p.m. ET, you must submit your group/individual information through  [this form](https://forms.office.com/r/893zttwbsa), including everyone's NDAs. Only ONE member should submit on behalf of the group. If you're working individually, you just submit for yourself.
+
+-   If you **do not submit**  this information by the required date and time, there will be a **5 percentage point penalty**  applied to your final project grade.
+
+## Step 5: Work on your project 
+    
+-   Access the data and template (TBA)
+-   Use the [Hints](#hints) to:
+    - webscrape the device data, 
+    - access the the postal code conversion file, and
+    - access the Canadian census data.
+-   Make use of project office hours (TBA)
+-   Week 12 is a 'project focus week', meaning no new content will be released on the project is your main focus for this class.
+
+
+## Step 6: Submit
+    
+-   Submit all relevant files to reproduce your report. Note that is includes and image files that are not directly created by R. The data provided will already be present, but any new datasets you create will need to be uploaded.
+-   Exception: Do NOT upload the post code conversion file or large version of the census API data. You should create appropriately sized datasets for this project from them and save and upload these.
+    -  You will document and explain the process by which you got and wangled these datasets, so that someone else could follow your process themselves, BUT you will ensure the licensed data is not actually provided.
+   - Why? This means that you can share (most of) this data and project in your own online portfolios, etc., but be very clear about what is and isn't appropriate to share publically.
 
 

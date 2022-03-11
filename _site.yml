@@ -5,8 +5,18 @@ description: |
 output_dir: "docs"
 navbar:
   right:
-    - text: "Home"
+    - text: "Instructions"
       href: index.html
-    - text: "About"
-      href: about.html
-output: distill::distill_article
+    - text: "Client emails"
+      href: emails.html
+    - text: "Hints"
+      href: hints.html
+    - text: "Rubric"
+      href: rubric.html
+    - text: "For interested outsiders"
+      href: outsiders.html
+    - text: "Course guide"
+      href: https://sta303-bolton.github.io/sta303-w22-courseguide/
+output:
+  distill::distill_article:
+    css: theme.css

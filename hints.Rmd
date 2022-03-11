@@ -1,0 +1,77 @@
+---
+title: "Hints"
+output: 
+  distill::distill_article:
+    toc: true
+    toc_depth: 3
+---
+
+```{r, xaringanExtra-clipboard, echo=FALSE}
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clone fa-2x\" style=\"color: #301e64\"></i>",
+    success_text = "<i class=\"fa fa-check fa-2x\" style=\"color: #90BE6D\"></i>",
+    error_text = "<i class=\"fa fa-times fa-2x\" style=\"color: #F94144\"></i>"
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+```
+
+# Web scraping a website with one simple table
+
+Here is some sample code, using the `rvest` package
+
+```{r, eval = FALSE}
+# Note: In adapting this for your code, please ensure all libraries are in a setup chunk at the beginning
+
+# These are the libraries I find useful for webscraping
+library(tidyverse)
+library(polite)
+library(rvest)
+
+url <- "url you are scarping"
+
+# Make sure this code is updated appropriately to provide 
+# informative user_agent details
+target <- bow(url,
+              user_agent = "liza.bolton@utoronto.ca for STA303/1002 project",
+              force = TRUE)
+
+# Any details provided in the robots text on crawl delays and 
+# which agents are allowed to scrape
+target
+
+html <- scrape(target)
+
+device_data <- html %>% 
+  html_elements("table") %>% 
+  html_table()
+
+```
+
+
+## Postal code conversion file
+
+- As a university of Toronto student you have access to a Census Canada [Postal Code Conversion Files](https://mdl.library.utoronto.ca/collections/numeric-data/census-canada/postal-code-conversion-file)
+
+- Ethical considerations
+  - You are asked to accept a license agreement to get access to this data.
+  - This is data that should NOT go directly on to your GitHub. Think carefully about how you will process this data, saving only the information you need for any data that is part of your final submission.
+- I recommend downloading the .sav file version. It says it is for SPSS, but it is easy to read into R.
+- Choose an appropriate year and make sure you specify/judtify it in your write-up.
+  
+  
+```{r, eval = FALSE}
+# install.packages("haven")
+library(haven)
+dataset = read_sav("prof-data/pccfNat_fccpNat_082021sav.sav")
+
+postcode <- dataset %>% 
+  select(PC, CSDuid)
+
+options(cancensus.api_key = "CensusMapper_8c6d18c4ef63dbfbe8c5ccb9c2f55871",
+        cancensus.cache_path = "prof-data")  
+```
+
+
+
