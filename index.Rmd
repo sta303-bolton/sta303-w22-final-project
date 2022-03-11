@@ -73,15 +73,15 @@ __All times are 3:03 p.m. ET.__
 
 # Penalties to AVOID
 
-- 5 percentage point penalty for failing to correctly register as an individual/group by the deadline.
-  - This include providing CORRECT details for all group members that will allow me to link you on MarkUs. (Your 'Contractor ID' is your UTORid!! Please don't get this wrong.)
+- __5 percentage point penalty__ for failing to correctly register as an individual/group by the deadline.
+  - This includes providing CORRECT details for all group members that will allow me to link you on MarkUs. (Your 'Contractor ID' is your UTORid!! Please don't get this wrong.)
   - There should be 1 PDF PER PERSON, so a team of 3 should submit 3 NDA files to the form (i.e., don't merge).
   
 <aside>
 Contractor ID = Your UTORid
 </aside>  
   
-- 5 percentage point penalty for not submitting the Rmd that creates your PDF (this also applies if your PDF submission is made in Word etc.)  
+- __5 percentage point penalty__ for not submitting the Rmd that creates your PDF (this also applies if your PDF submission is made in Word etc.)  
 
 # Steps
 
@@ -89,6 +89,9 @@ Contractor ID = Your UTORid
 
 
 - You can check the emails from your client [here](#email1).   
+
+<aside>[Read the first email](https://sta303-bolton.github.io/sta303-w22-final-project/emails.html#email1)</aside>
+
 - You can work on your project alone or with up to three other students (regardless of section) for a group of __four total students__.  
 - The section you are enrolled in does not matter, you may work with students across sections/within the same section, etc.
 - You can find teammates with [Piazza](https://piazza.com/class/kx47tj4fmy65dg?cid=5).
@@ -124,7 +127,7 @@ Contractor ID = Your UTORid
     
 -   Access the data and template (TBA)
 -   Use the [Hints](#hints) to:
-    - webscrape the device data, 
+    - webscrape the device data,
     - access the the postal code conversion file, and
     - access the Canadian census data.
 -   Make use of project office hours (TBA)

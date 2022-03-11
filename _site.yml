@@ -11,6 +11,8 @@ navbar:
       href: emails.html
     - text: "Data and hints"
       href: hints.html
+    - text: "Help"
+      href: help.html
     - text: "Rubric"
       href: rubric.html
     - text: "For interested outsiders"

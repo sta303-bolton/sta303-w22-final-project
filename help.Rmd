@@ -1,0 +1,70 @@
+---
+title: "Help"
+output: 
+  distill::distill_article:
+    toc: true
+    toc_depth: 3
+---
+
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics("https://media.istockphoto.com/photos/barrier-under-construction-picture-id1139968862?k=20&m=1139968862&s=612x612&w=0&h=QXAvHsIYHG5MLxMIgIkICw8-n31R3sQvup2d6LGd3eQ=")
+```
+
+# Writing centres
+
+You are eligible to work with the writing centre at the college or campus where you're registered.
+
+-   [Innis College Writing Centre](http://innis.utoronto.ca/current-students/academic/innis/writing-centre/), Innis College, Rooms 315 and 321.
+
+-   [New College Writing Centre](http://www.newcollege.utoronto.ca/academics/writing-centre/), Wilson Hall, Rooms 2045 and 2047.
+
+-   [St. Michael's Writing Centre](https://library.stmikes.utoronto.ca/research/), Kelly Library Learning Commons.
+
+-   [Trinity College Writing Centre](http://www.trinity.utoronto.ca/student-services/support/writing-centre.html), Trinity College, Academic Resource Centre, Room 3.
+
+-   [University College Writing Centre](http://www.uc.utoronto.ca/writing-centre), University College, Rooms 259E, 259F, and 259G.
+
+-   [Victoria College Writing Centre](https://www.vic.utoronto.ca/current-students/registrars-office/writing-centre), Online and telephone appointments only during the pandemic.
+
+-   [Woodsworth College Academic Writing Centre](http://www.wdw.utoronto.ca/index.php/current_students/academic_writing_centre/), Woodsworth College, Room 214.
+
+Source: <https://writing.utoronto.ca/writing-centres/arts-and-science/> (not sure when last updated)
+
+# STA303/1002 office hours
+
+As these have Zoom links, please view the [office hours page](https://q.utoronto.ca/courses/253305/pages/office-hours)
+
+# The New College Statistics Aid Centre
+
+The New College Statistics Aid Centre (NCSAC) will run via Zoom this semester and will continue to do so until further notice. 
+
+If you are using Zoom **at the University of Toronto** for the first time**,** please visit [<https://act.utoronto.ca/zoom-information/Links> to an external site.](https://act.utoronto.ca/zoom-information/ "https://act.utoronto.ca/zoom-information/") for instructions on activating your Zoom Education account. This licensed account is required in order to participate, *even if you already have an existing Zoom account using your mail.utoronto.ca email*. Please log in to Zoom through [<https://utoronto.zoom.us/> (Links to an external site.)](https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Futoronto.zoom.us%2F&data=04%7C01%7Cliza.bolton%40UTORONTO.CA%7C3b0cac36fabd4e880e6708d9d78c988d%7C78aac2262f034b4d9037b46d56c55210%7C0%7C0%7C637777821113395183%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sdata=eERISl6huPr0AsUFFgVY%2Bir7I8iL2lPdZc5JXGEN5cU%3D&reserved=0 "Original URL: https://utoronto.zoom.us/. Click or tap if you trust this link.") to ensure you are using the provisional managed Zoom Education account.
+
+1.  The students should participate through the Zoom links listed below, corresponding to each TA. **They** **must use their U of T account/email address to participate**. Otherwise, they will not be able to join the room.
+
+2.  Students may have to wait in a Zoom waiting room if the TA is occupied with another student---they will be admitted as soon as the TA is finished.
+
+3.  **Students should type in their "Name -- Course Code" as soon as they enter the room.**
+
+The schedule is as follows; the time zone is EST until March 12 and EDT thereafter.
+
+**January 17 to April 8 (open during Reading Week):**
+
+Mondays: 6:00 p.m. -- 9:00 p.m.  *Lei (Liam) Sun\** **(Lei is also one of our STA303 TAs!)**
+
+Zoom link: [<https://utoronto.zoom.us/j/84303288261> (Links to an external site.)](https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Futoronto.zoom.us%2Fj%2F84303288261&data=04%7C01%7Cliza.bolton%40UTORONTO.CA%7C3b0cac36fabd4e880e6708d9d78c988d%7C78aac2262f034b4d9037b46d56c55210%7C0%7C0%7C637777821113395183%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sdata=yEniw%2BTxghhnlHCTioeNDy8flHJgCFswVXnSMz8jY5E%3D&reserved=0 "Original URL: https://utoronto.zoom.us/j/84303288261. Click or tap if you trust this link.")\
+*(Note: No office hours on Family Day, Feb. 21)*
+
+Tuesdays: 7:00 p.m. -- 10:00 p.m.  *Angela Wang\**
+
+Zoom link: [<https://utoronto.zoom.us/j/82959478053> (Links to an external site.)](https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Futoronto.zoom.us%2Fj%2F82959478053&data=04%7C01%7Cliza.bolton%40UTORONTO.CA%7C3b0cac36fabd4e880e6708d9d78c988d%7C78aac2262f034b4d9037b46d56c55210%7C0%7C0%7C637777821113395183%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sdata=0C3tiLdX6Ua93%2BxnpIxpK5uaZe9ZHsDiSb3ZAFVk0wU%3D&reserved=0 "Original URL: https://utoronto.zoom.us/j/82959478053. Click or tap if you trust this link.")
+
+Wednesdays: 9:00 a.m. -- 12:00 p.m.  *George Stefan*
+
+Zoom link: [<https://utoronto.zoom.us/j/82151419286> (Links to an external site.)](https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Futoronto.zoom.us%2Fj%2F82151419286&data=04%7C01%7Cliza.bolton%40UTORONTO.CA%7C3b0cac36fabd4e880e6708d9d78c988d%7C78aac2262f034b4d9037b46d56c55210%7C0%7C0%7C637777821113551420%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sdata=lZogQocSBMdVKhDCw5MPll7Ibek%2FlAh7PTM6BV4zI88%3D&reserved=0 "Original URL: https://utoronto.zoom.us/j/82151419286. Click or tap if you trust this link.")
+
+Thursdays: 2:00 p.m. -- 5:00 p.m.  *David Veitch*
+
+Zoom link: [<https://utoronto.zoom.us/j/82238702093> (Links to an external site.)](https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Futoronto.zoom.us%2Fj%2F82238702093&data=04%7C01%7Cliza.bolton%40UTORONTO.CA%7C3b0cac36fabd4e880e6708d9d78c988d%7C78aac2262f034b4d9037b46d56c55210%7C0%7C0%7C637777821113551420%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sdata=7PHjwFcEGNGucEslDv4AQ%2BGUXM8GqpIXuXLhdKZSmSc%3D&reserved=0 "Original URL: https://utoronto.zoom.us/j/82238702093. Click or tap if you trust this link.")
+
+*(\*) Can help with ACT courses.*
