@@ -2066,13 +2066,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: black;
   }
 
-  .distill-site-header {
-  }
+    .distill-site-header {
+      --title-size:       18px;
+      --text-color:       #005063;
+        --text-size:        15px;
+      --hover-color:      black;
+    }
 
   .distill-site-footer {
-    font-size: 10px;
-    margin: 0 0;
-    padding: 0 0;
+    background-color: #005063;
+    color: white;
   }
 
   @media print {
@@ -2083,6 +2086,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   yellow {
     background-color: #FEBB43;
+  }
+
+  d-article {
+    width: 100%;
+    grid-column: 1;
   }
 
   d-title {
@@ -2228,7 +2236,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="nav-right">
 <a href="index.html">Instructions</a>
 <a href="emails.html">Client emails</a>
-<a href="hints.html">Hints</a>
+<a href="hints.html">Data and hints</a>
 <a href="rubric.html">Rubric</a>
 <a href="outsiders.html">For interested outsiders</a>
 <a href="https://sta303-bolton.github.io/sta303-w22-courseguide/">Course guide</a>
@@ -2258,6 +2266,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#executive-summary-35">Executive summary (35%)</a></li>
 </ul>
 </nav>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="https://media.istockphoto.com/photos/barrier-under-construction-picture-id1139968862?k=20&m=1139968862&s=612x612&w=0&h=QXAvHsIYHG5MLxMIgIkICw8-n31R3sQvup2d6LGd3eQ=" style="display: block; margin: auto;" /></p>
 </div>
 <h1 id="overview">Overview</h1>
 <table>
@@ -2384,10 +2395,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1 id="executive-summary-35">Executive summary (35%)</h1>
 <table>
 <colgroup>
-<col style="width: 13%" />
-<col style="width: 20%" />
-<col style="width: 22%" />
-<col style="width: 20%" />
+<col style="width: 8%" />
+<col style="width: 21%" />
+<col style="width: 28%" />
+<col style="width: 19%" />
 <col style="width: 22%" />
 </colgroup>
 <thead>
@@ -2418,8 +2429,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <td>Appropriate level of detail for the intended audience</td>
 </tr>
 <tr class="odd">
-<td><p><strong>Clarity and appropriateness:</strong></p>
-<p><strong>Visualizations and tables</strong></p></td>
+<td><strong>Clarity and appropriateness: Visualizations and tables</strong></td>
 <td>Tables / figures are inappropriate for the context.</td>
 <td><p>Some tables/figures included are not directly relevant to answering the research question(s), and do not effectively communicate the story of the results as they relate to the research question(s).</p>
 <p>Too many visualisations / tables included that are not directly relevant and/or should have been further curated.</p></td>
@@ -2431,8 +2441,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p> </p></td>
 </tr>
 <tr class="even">
-<td><p><strong>Clarity and appropriateness:</strong></p>
-<p><strong>Written comments</strong></p></td>
+<td><strong>Clarity and appropriateness: Written comments</strong></td>
 <td>Results are reported with insufficient information and context AND/OR too much jargon for audience. Too many unimportant or irrelevant results included.</td>
 <td><p>Results are reported but with insufficient information for some important results AND/OR not interpreted in context.</p>
 <p>Reported results are not connected to the research questions.</p>
@@ -2476,7 +2485,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="appendix-bottom"></div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
+<div class="distill-site-nav distill-site-footer">
+<p>The site made with the distill R-package <i class="fab fa-r-project"></i> powered by the distill web framework. <i class="fab fa-js"></i></span></p>
+</div>
 <!--/radix_placeholder_navigation_after_body-->
+
 
 </body>
 

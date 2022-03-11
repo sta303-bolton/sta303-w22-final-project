@@ -2066,13 +2066,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: black;
   }
 
-  .distill-site-header {
-  }
+    .distill-site-header {
+      --title-size:       18px;
+      --text-color:       #005063;
+        --text-size:        15px;
+      --hover-color:      black;
+    }
 
   .distill-site-footer {
-    font-size: 10px;
-    margin: 0 0;
-    padding: 0 0;
+    background-color: #005063;
+    color: white;
   }
 
   @media print {
@@ -2083,6 +2086,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   yellow {
     background-color: #FEBB43;
+  }
+
+  d-article {
+    width: 100%;
+    grid-column: 1;
   }
 
   d-title {
@@ -2228,7 +2236,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="nav-right">
 <a href="index.html">Instructions</a>
 <a href="emails.html">Client emails</a>
-<a href="hints.html">Hints</a>
+<a href="hints.html">Data and hints</a>
 <a href="rubric.html">Rubric</a>
 <a href="outsiders.html">For interested outsiders</a>
 <a href="https://sta303-bolton.github.io/sta303-w22-courseguide/">Course guide</a>
@@ -2305,7 +2313,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="appendix-bottom"></div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
+<div class="distill-site-nav distill-site-footer">
+<p>The site made with the distill R-package <i class="fab fa-r-project"></i> powered by the distill web framework. <i class="fab fa-js"></i></span></p>
+</div>
 <!--/radix_placeholder_navigation_after_body-->
+
 
 </body>
 

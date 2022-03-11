@@ -1,10 +1,15 @@
 ---
-title: "Hints"
+title: "Data and hints"
 output: 
   distill::distill_article:
     toc: true
     toc_depth: 3
 ---
+
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics("https://media.istockphoto.com/photos/barrier-under-construction-picture-id1139968862?k=20&m=1139968862&s=612x612&w=0&h=QXAvHsIYHG5MLxMIgIkICw8-n31R3sQvup2d6LGd3eQ=")
+```
+
 
 ```{r, xaringanExtra-clipboard, echo=FALSE}
 htmltools::tagList(
@@ -22,7 +27,8 @@ htmltools::tagList(
 Here is some sample code, using the `rvest` package
 
 ```{r, eval = FALSE}
-# Note: In adapting this for your code, please ensure all libraries are in a setup chunk at the beginning
+# Note: In adapting this for your code, 
+# please ensure all libraries are in a setup chunk at the beginning
 
 # These are the libraries I find useful for webscraping
 library(tidyverse)
@@ -49,8 +55,7 @@ device_data <- html %>%
 
 ```
 
-
-## Postal code conversion file
+# Postal code conversion file
 
 - As a university of Toronto student you have access to a Census Canada [Postal Code Conversion Files](https://mdl.library.utoronto.ca/collections/numeric-data/census-canada/postal-code-conversion-file)
 
@@ -69,8 +74,41 @@ dataset = read_sav("prof-data/pccfNat_fccpNat_082021sav.sav")
 postcode <- dataset %>% 
   select(PC, CSDuid)
 
-options(cancensus.api_key = "CensusMapper_8c6d18c4ef63dbfbe8c5ccb9c2f55871",
-        cancensus.cache_path = "prof-data")  
+```
+
+# Getting income data from the Canadian census
+
+- Sign up for the cancensus API
+- Get your API key and repalce it below
+
+```{r, eval=FALSE}
+# install.packages("cancensus")
+library(cancensus)
+
+
+options(cancensus.api_key = "your API key here",
+        cancensus.cache_path = "cache") # this sets a folder for your cache
+
+
+# get all regions as at the 2016 Census (2020 not up yet)
+regions <- list_census_regions(dataset = "CA16")
+
+regions_filtered <-  regions %>% 
+  filter(level == "CSD") %>% # Figure out what CSD means in Census data
+  as_census_region_list()
+
+# This can take a while
+census_data_csd <- get_census(dataset='CA16', regions = regions_filtered,
+                          vectors=c("v_CA16_2397"),
+                          level='CSD', geo_format = "sf")
+
+# Simplify to only needed variables
+median_income <- census_data_csd %>% 
+  as_tibble() %>% 
+  select(CSDuid = GeoUID, contains("median"), Population) %>% 
+  mutate(CSDuid = parse_number(CSDuid)) %>% 
+  rename(hhld_median_inc = 2)
+
 ```
 
 

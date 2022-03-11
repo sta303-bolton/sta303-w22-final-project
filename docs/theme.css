@@ -23,13 +23,16 @@ body {
   color: black;
 }
 
-.distill-site-header {
-}
+  .distill-site-header {
+    --title-size:       18px;
+    --text-color:       #005063;
+      --text-size:        15px;
+    --hover-color:      black;
+  }
 
 .distill-site-footer {
-  font-size: 10px;
-  margin: 0 0;
-  padding: 0 0;
+  background-color: #005063;
+  color: white;
 }
 
 @media print {
@@ -40,6 +43,11 @@ body {
 
 yellow {
   background-color: #FEBB43;
+}
+
+d-article {
+  width: 100%;
+  grid-column: 1;
 }
 
 d-title {

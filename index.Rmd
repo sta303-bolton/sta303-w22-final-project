@@ -77,6 +77,10 @@ __All times are 3:03 p.m. ET.__
   - This include providing CORRECT details for all group members that will allow me to link you on MarkUs. (Your 'Contractor ID' is your UTORid!! Please don't get this wrong.)
   - There should be 1 PDF PER PERSON, so a team of 3 should submit 3 NDA files to the form (i.e., don't merge).
   
+<aside>
+Contractor ID = Your UTORid
+</aside>  
+  
 - 5 percentage point penalty for not submitting the Rmd that creates your PDF (this also applies if your PDF submission is made in Word etc.)  
 
 # Steps
@@ -106,9 +110,9 @@ __All times are 3:03 p.m. ET.__
 
     -   If there are team dynamic issues, LET ME KNOW ASAP, I can help you work on a solution, or split up the team (that won't be penalized).
     
-<yellow>[PDF version]()</yellow>
+<yellow>[Download PDF version](https://sta303-bolton.github.io/sta303-w22-final-project/nda/MINGAR%20NDA.pdf)</yellow>
 
-<yellow>[DOCX version]()</yellow>
+<yellow>[Download DOCX version](https://github.com/sta303-bolton/sta303-w22-final-project/raw/master/nda/MINGAR%20NDA.docx)</yellow>
 
 ## Step 4: Submit your NDAs (and through this, register as group or individual) 
 

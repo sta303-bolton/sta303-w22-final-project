@@ -9,7 +9,7 @@ navbar:
       href: index.html
     - text: "Client emails"
       href: emails.html
-    - text: "Hints"
+    - text: "Data and hints"
       href: hints.html
     - text: "Rubric"
       href: rubric.html

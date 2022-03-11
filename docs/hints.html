@@ -86,26 +86,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>STA303/1002 Winter 22 Final Project: Hints</title>
+  <title>STA303/1002 Winter 22 Final Project: Data and hints</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="STA303/1002 Winter 22 Final Project: Hints"/>
+  <meta property="og:title" content="STA303/1002 Winter 22 Final Project: Data and hints"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="STA303/1002 Winter 22 Final Project"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="STA303/1002 Winter 22 Final Project: Hints"/>
+  <meta property="twitter:title" content="STA303/1002 Winter 22 Final Project: Data and hints"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output"]}},"value":[{"type":"character","attributes":{},"value":["Hints"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output"]}},"value":[{"type":"character","attributes":{},"value":["Data and hints"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2072,13 +2072,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: black;
   }
 
-  .distill-site-header {
-  }
+    .distill-site-header {
+      --title-size:       18px;
+      --text-color:       #005063;
+        --text-size:        15px;
+      --hover-color:      black;
+    }
 
   .distill-site-footer {
-    font-size: 10px;
-    margin: 0 0;
-    padding: 0 0;
+    background-color: #005063;
+    color: white;
   }
 
   @media print {
@@ -2089,6 +2092,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   yellow {
     background-color: #FEBB43;
+  }
+
+  d-article {
+    width: 100%;
+    grid-column: 1;
   }
 
   d-title {
@@ -2221,7 +2229,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Hints","authors":[]}
+{"title":"Data and hints","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2234,7 +2242,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="nav-right">
 <a href="index.html">Instructions</a>
 <a href="emails.html">Client emails</a>
-<a href="hints.html">Hints</a>
+<a href="hints.html">Data and hints</a>
 <a href="rubric.html">Rubric</a>
 <a href="outsiders.html">For interested outsiders</a>
 <a href="https://sta303-bolton.github.io/sta303-w22-courseguide/">Course guide</a>
@@ -2247,7 +2255,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Hints</h1>
+<h1>Data and hints</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2259,12 +2267,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#web-scraping-a-website-with-one-simple-table">Web scraping a website with one simple table</a>
-<ul>
+<li><a href="#web-scraping-a-website-with-one-simple-table">Web scraping a website with one simple table</a></li>
 <li><a href="#postal-code-conversion-file">Postal code conversion file</a></li>
-</ul></li>
+<li><a href="#getting-income-data-from-the-canadian-census">Getting income data from the Canadian census</a></li>
 </ul>
 </nav>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="https://media.istockphoto.com/photos/barrier-under-construction-picture-id1139968862?k=20&m=1139968862&s=612x612&w=0&h=QXAvHsIYHG5MLxMIgIkICw8-n31R3sQvup2d6LGd3eQ=" style="display: block; margin: auto;" /></p>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 
@@ -2273,7 +2283,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>Here is some sample code, using the <code>rvest</code> package</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Note: In adapting this for your code, please ensure all libraries are in a setup chunk at the beginning</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Note: In adapting this for your code, </span>
+<span class='co'># please ensure all libraries are in a setup chunk at the beginning</span>
 
 <span class='co'># These are the libraries I find useful for webscraping</span>
 <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
@@ -2300,7 +2311,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </code></pre>
 </div>
 </div>
-<h2 id="postal-code-conversion-file">Postal code conversion file</h2>
+<h1 id="postal-code-conversion-file">Postal code conversion file</h1>
 <ul>
 <li><p>As a university of Toronto student you have access to a Census Canada <a href="https://mdl.library.utoronto.ca/collections/numeric-data/census-canada/postal-code-conversion-file">Postal Code Conversion Files</a></p></li>
 <li><p>Ethical considerations</p>
@@ -2319,9 +2330,42 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <span class='va'>postcode</span> <span class='op'>&lt;-</span> <span class='va'>dataset</span> <span class='op'>%&gt;%</span> 
   <span class='fu'>select</span><span class='op'>(</span><span class='va'>PC</span>, <span class='va'>CSDuid</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h1 id="getting-income-data-from-the-canadian-census">Getting income data from the Canadian census</h1>
+<ul>
+<li>Sign up for the cancensus API</li>
+<li>Get your API key and repalce it below</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># install.packages("cancensus")</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/mountainMath/cancensus'>cancensus</a></span><span class='op'>)</span>
 
-<span class='fu'><a href='https://rdrr.io/r/base/options.html'>options</a></span><span class='op'>(</span>cancensus.api_key <span class='op'>=</span> <span class='st'>"CensusMapper_8c6d18c4ef63dbfbe8c5ccb9c2f55871"</span>,
-        cancensus.cache_path <span class='op'>=</span> <span class='st'>"prof-data"</span><span class='op'>)</span>  
+
+<span class='fu'><a href='https://rdrr.io/r/base/options.html'>options</a></span><span class='op'>(</span>cancensus.api_key <span class='op'>=</span> <span class='st'>"your API key here"</span>,
+        cancensus.cache_path <span class='op'>=</span> <span class='st'>"cache"</span><span class='op'>)</span> <span class='co'># this sets a folder for your cache</span>
+
+
+<span class='co'># get all regions as at the 2016 Census (2020 not up yet)</span>
+<span class='va'>regions</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://mountainmath.github.io/cancensus/index.html/reference/list_census_regions.html'>list_census_regions</a></span><span class='op'>(</span>dataset <span class='op'>=</span> <span class='st'>"CA16"</span><span class='op'>)</span>
+
+<span class='va'>regions_filtered</span> <span class='op'>&lt;-</span>  <span class='va'>regions</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>level</span> <span class='op'>==</span> <span class='st'>"CSD"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># Figure out what CSD means in Census data</span>
+  <span class='fu'><a href='https://mountainmath.github.io/cancensus/index.html/reference/as_census_region_list.html'>as_census_region_list</a></span><span class='op'>(</span><span class='op'>)</span>
+
+<span class='co'># This can take a while</span>
+<span class='va'>census_data_csd</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://mountainmath.github.io/cancensus/index.html/reference/get_census.html'>get_census</a></span><span class='op'>(</span>dataset<span class='op'>=</span><span class='st'>'CA16'</span>, regions <span class='op'>=</span> <span class='va'>regions_filtered</span>,
+                          vectors<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"v_CA16_2397"</span><span class='op'>)</span>,
+                          level<span class='op'>=</span><span class='st'>'CSD'</span>, geo_format <span class='op'>=</span> <span class='st'>"sf"</span><span class='op'>)</span>
+
+<span class='co'># Simplify to only needed variables</span>
+<span class='va'>median_income</span> <span class='op'>&lt;-</span> <span class='va'>census_data_csd</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>as_tibble</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>select</span><span class='op'>(</span>CSDuid <span class='op'>=</span> <span class='va'>GeoUID</span>, <span class='fu'>contains</span><span class='op'>(</span><span class='st'>"median"</span><span class='op'>)</span>, <span class='va'>Population</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>mutate</span><span class='op'>(</span>CSDuid <span class='op'>=</span> <span class='fu'>parse_number</span><span class='op'>(</span><span class='va'>CSDuid</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>rename</span><span class='op'>(</span>hhld_median_inc <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
@@ -2340,7 +2384,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="appendix-bottom"></div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
+<div class="distill-site-nav distill-site-footer">
+<p>The site made with the distill R-package <i class="fab fa-r-project"></i> powered by the distill web framework. <i class="fab fa-js"></i></span></p>
+</div>
 <!--/radix_placeholder_navigation_after_body-->
+
 
 </body>
 
