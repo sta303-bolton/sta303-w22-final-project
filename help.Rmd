@@ -6,10 +6,6 @@ output:
     toc_depth: 3
 ---
 
-```{r, echo=FALSE, fig.align='center'}
-knitr::include_graphics("https://media.istockphoto.com/photos/barrier-under-construction-picture-id1139968862?k=20&m=1139968862&s=612x612&w=0&h=QXAvHsIYHG5MLxMIgIkICw8-n31R3sQvup2d6LGd3eQ=")
-```
-
 # Writing centres
 
 You are eligible to work with the writing centre at the college or campus where you're registered.
@@ -32,13 +28,13 @@ Source: <https://writing.utoronto.ca/writing-centres/arts-and-science/> (not sur
 
 # STA303/1002 office hours
 
-As these have Zoom links, please view the [office hours page](https://q.utoronto.ca/courses/253305/pages/office-hours)
+Please view the [office hours page](https://q.utoronto.ca/courses/253305/pages/office-hours). Additional TA hours will be offered (TBA).
 
 # The New College Statistics Aid Centre
 
 The New College Statistics Aid Centre (NCSAC) will run via Zoom this semester and will continue to do so until further notice. 
 
-If you are using Zoom **at the University of Toronto** for the first time**,** please visit [<https://act.utoronto.ca/zoom-information/Links> to an external site.](https://act.utoronto.ca/zoom-information/ "https://act.utoronto.ca/zoom-information/") for instructions on activating your Zoom Education account. This licensed account is required in order to participate, *even if you already have an existing Zoom account using your mail.utoronto.ca email*. Please log in to Zoom through [<https://utoronto.zoom.us/> (Links to an external site.)](https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Futoronto.zoom.us%2F&data=04%7C01%7Cliza.bolton%40UTORONTO.CA%7C3b0cac36fabd4e880e6708d9d78c988d%7C78aac2262f034b4d9037b46d56c55210%7C0%7C0%7C637777821113395183%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sdata=eERISl6huPr0AsUFFgVY%2Bir7I8iL2lPdZc5JXGEN5cU%3D&reserved=0 "Original URL: https://utoronto.zoom.us/. Click or tap if you trust this link.") to ensure you are using the provisional managed Zoom Education account.
+If you are using Zoom **at the University of Toronto** for the first time**,** please visit <https://act.utoronto.ca/zoom-information/> for instructions on activating your Zoom Education account. This licensed account is required in order to participate, *even if you already have an existing Zoom account using your mail.utoronto.ca email*. Please log in to Zoom through [https://utoronto.zoom.us/](https://utoronto.zoom.us/%22) to ensure you are using the provisional managed Zoom Education account.
 
 1.  The students should participate through the Zoom links listed below, corresponding to each TA. **They** **must use their U of T account/email address to participate**. Otherwise, they will not be able to join the room.
 
@@ -50,21 +46,35 @@ The schedule is as follows; the time zone is EST until March 12 and EDT thereaf
 
 **January 17 to April 8 (open during Reading Week):**
 
-Mondays: 6:00 p.m. -- 9:00 p.m.  *Lei (Liam) Sun\** **(Lei is also one of our STA303 TAs!)**
+#### Mondays: 6:00 p.m. -- 9:00 p.m.  *Lei (Liam) Sun\** **(Lei is also one of our STA303 TAs!)**
 
-Zoom link: [<https://utoronto.zoom.us/j/84303288261> (Links to an external site.)](https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Futoronto.zoom.us%2Fj%2F84303288261&data=04%7C01%7Cliza.bolton%40UTORONTO.CA%7C3b0cac36fabd4e880e6708d9d78c988d%7C78aac2262f034b4d9037b46d56c55210%7C0%7C0%7C637777821113395183%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sdata=yEniw%2BTxghhnlHCTioeNDy8flHJgCFswVXnSMz8jY5E%3D&reserved=0 "Original URL: https://utoronto.zoom.us/j/84303288261. Click or tap if you trust this link.")\
+Zoom link: <https://utoronto.zoom.us/j/84303288261>\
 *(Note: No office hours on Family Day, Feb. 21)*
 
-Tuesdays: 7:00 p.m. -- 10:00 p.m.  *Angela Wang\**
+#### Tuesdays: 7:00 p.m. -- 10:00 p.m.  *Angela Wang\**
 
-Zoom link: [<https://utoronto.zoom.us/j/82959478053> (Links to an external site.)](https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Futoronto.zoom.us%2Fj%2F82959478053&data=04%7C01%7Cliza.bolton%40UTORONTO.CA%7C3b0cac36fabd4e880e6708d9d78c988d%7C78aac2262f034b4d9037b46d56c55210%7C0%7C0%7C637777821113395183%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sdata=0C3tiLdX6Ua93%2BxnpIxpK5uaZe9ZHsDiSb3ZAFVk0wU%3D&reserved=0 "Original URL: https://utoronto.zoom.us/j/82959478053. Click or tap if you trust this link.")
+Zoom link: <https://utoronto.zoom.us/j/82959478053>
 
-Wednesdays: 9:00 a.m. -- 12:00 p.m.  *George Stefan*
+#### Wednesdays: 9:00 a.m. -- 12:00 p.m.  *George Stefan*
 
-Zoom link: [<https://utoronto.zoom.us/j/82151419286> (Links to an external site.)](https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Futoronto.zoom.us%2Fj%2F82151419286&data=04%7C01%7Cliza.bolton%40UTORONTO.CA%7C3b0cac36fabd4e880e6708d9d78c988d%7C78aac2262f034b4d9037b46d56c55210%7C0%7C0%7C637777821113551420%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sdata=lZogQocSBMdVKhDCw5MPll7Ibek%2FlAh7PTM6BV4zI88%3D&reserved=0 "Original URL: https://utoronto.zoom.us/j/82151419286. Click or tap if you trust this link.")
+Zoom link: <https://utoronto.zoom.us/j/82151419286>
 
-Thursdays: 2:00 p.m. -- 5:00 p.m.  *David Veitch*
+#### Thursdays: 2:00 p.m. -- 5:00 p.m.  *David Veitch*
 
-Zoom link: [<https://utoronto.zoom.us/j/82238702093> (Links to an external site.)](https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Futoronto.zoom.us%2Fj%2F82238702093&data=04%7C01%7Cliza.bolton%40UTORONTO.CA%7C3b0cac36fabd4e880e6708d9d78c988d%7C78aac2262f034b4d9037b46d56c55210%7C0%7C0%7C637777821113551420%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sdata=7PHjwFcEGNGucEslDv4AQ%2BGUXM8GqpIXuXLhdKZSmSc%3D&reserved=0 "Original URL: https://utoronto.zoom.us/j/82238702093. Click or tap if you trust this link.")
+Zoom link: [https://utoronto.zoom.us/j/82238702093](https://utoronto.zoom.us/j/82238702093.)
 
 *(\*) Can help with ACT courses.*
+
+# Mental health supports
+
+You may find yourself feeling overwhelmed, depressed, or anxious. Lots of people feel the same way. There is help available from mental health professionals 24 hours a day via online and phone-based services. Here are some that are available to U of T students:
+
+-   [MySSP - My Student Support Program](https://www.studentlife.utoronto.ca/hwc/myssp) 1-844-451-9700, or outside of Canada call 001-416-380-6578
+
+-   [Good2Talk Student Helpline](https://good2talk.ca/) 1-866-925-5454, or text GOOD2TALK to 686868
+
+-   [Distress Centres of Greater Toronto](https://www.torontodistresscentre.com/) 416-408-4357, or text 45645
+
+There is also the new Navi tool for U of T students, it is a chatbot and your questions are totally anonymous. <http://uoft.me/navi>
+
+The student union are also curating a list here: <https://www.utsu.ca/mental-health/>

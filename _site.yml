@@ -19,6 +19,7 @@ navbar:
       href: outsiders.html
     - text: "Course guide"
       href: https://sta303-bolton.github.io/sta303-w22-courseguide/
+favicon: "images/favicon.ico"
 output:
   distill::distill_article:
     css: theme.css

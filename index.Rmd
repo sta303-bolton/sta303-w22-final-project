@@ -72,10 +72,13 @@ __All times are 3:03 p.m. ET.__
 
 
 # Penalties to AVOID
-
+<aside>
+Due March 18 at 3:03 p.m. ET
+</aside>  
+  
 - __5 percentage point penalty__ for failing to correctly register as an individual/group by the deadline.
   - This includes providing CORRECT details for all group members that will allow me to link you on MarkUs. (Your 'Contractor ID' is your UTORid!! Please don't get this wrong.)
-  - There should be 1 PDF PER PERSON, so a team of 3 should submit 3 NDA files to the form (i.e., don't merge).
+  - There should be 1 PDF PER PERSON, so a team of 3 should submit 3 NDA files AS PDFs to the form (i.e., don't merge).
   
 <aside>
 Contractor ID = Your UTORid
@@ -142,3 +145,6 @@ Contractor ID = Your UTORid
    - Why? This means that you can share (most of) this data and project in your own online portfolios, etc., but be very clear about what is and isn't appropriate to share publically.
 
 
+# Credits
+
+Thank you to [Sonia Markes](https://www.statistics.utoronto.ca/people/directories/graduate-students/sonia-markes) for contibuting to the background research and planning for this project.
