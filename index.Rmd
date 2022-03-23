@@ -1,7 +1,7 @@
 ---
 title: "STA303/1002 Winter 22 Final Project"
 description: |
-  Instruction for the STA303/1002 final project (and information to help prospective employers/clients, interested 2nd cousins and whoever else better understand student achievements and skills).
+  Instructions for the STA303/1002 final project (and information to help prospective employers/clients, interested 2nd cousins and whoever else better understand student achievements and skills).
 
 output: 
   distill::distill_article:
