@@ -33,7 +33,7 @@ This files is a Markdown based README file. It will be rendered on GitHub as a l
 ## Folders
 - The `data-raw` folder should have the raw data provided by the client, as well where the licensed data for the postcode conversion, the census data and your web scraping results should be saved. This file should NOT be made publicly available. 
 
-- The `data` folder should contain any datasets created in the `data-cleaning.Rmd` and used in `sta303-final-project.Rmd`.
+- The `data` folder should contain any datasets created in the `data-prep.Rmd` and used in `sta303-final-project.Rmd`.
 
 - The `cache` folder will appear after you set up the Canadian census data. It doesn't not need to be submitted as part of you assessment.
 
@@ -166,13 +166,13 @@ device_data <- html %>%
 - I recommend downloading the .sav file version. It says it is for SPSS, but it is easy to read into R.
 - Choose an appropriate year and make sure you specify/justify it in your write-up.
 
-  
 ## Uploading the data to the JupyterHub
 
-__You may need to compress the .sav file before uploading to ensure a smooth upload.__ It will automatically decompressed for you, upon upload.
+~~__You may need to compress the .sav file before uploading to ensure a smooth upload.__ It will automatically decompressed for you, upon upload.~~
 
-If you're getting crashes on the JupyterHub, talk to the teaching team about `break_glass_in_case_of_emergency`.
-  
+If you are using the JupyterHub, please use the `break_glass_in_case_of_emergency.Rds` in the `data-raw` folder. It is the result of the below code (i.e., it is `postcode`). 
+
+
 ```{r, eval = FALSE}
 # install.packages("haven")
 library(haven)
@@ -221,6 +221,19 @@ median_income <- census_data_csd %>%
 
 ```
 
+# Privacy?
+
+For this project, there are two distinct ways you should think about data protection and privacy:
+
+__1) As if you were really consultants working for a client. (Report world)__
+
+This will be what you consider in the writing of your report. What would a real consultant do for a really client. 
+
+__2) As responsible students/statisticians at U of T. (GitHub/portfolio world)__
+
+This will be what you consider in sharing your report in the 'real world'. To access the postcode data you need to agree to the U of T license around it (make sure you do this, even if you need to use the `break-glass` in the end). This means this file should NOT be shared on your GitHub or as part of any portfolio of your work. 'Keep it secret, keep it safe'.
+
+Note, you also shouldn't include your API key anywhere as that is private information about your account.
 
 # Other
 

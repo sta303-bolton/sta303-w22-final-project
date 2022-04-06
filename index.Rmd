@@ -13,34 +13,33 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-_Last updated:_ `r format(Sys.time(), '%Y-%m-%d %H:%S')`
+<yellow>*Last updated:* `r format(Sys.time(), '%Y-%m-%d %H:%S')`</yellow>
 
 Your final project for STA303/1002 is a consulting project for MINGAR. You will be analyzing data about their customers and creating a report appropriate for the Board of Directors.
 
-_Note: MINGAR isn't a real company, it would be massively reckless to provide 600 people with customer data with this level of detail. It would be very easy to identify individuals from data like this. That said, this dataset is based on real research and trends, and my own experiences running a small consulting company._
+*Note: MINGAR isn't a real company, it would be massively reckless to provide 600 people with customer data with this level of detail. It would be very easy to identify individuals from data like this. That said, this dataset is based on real research and trends, and my own experiences running a small consulting company.*
 
 ```{r, fig.align="center"}
 knitr::include_graphics("images/mingar-logo-small.png")
 ```
 
-
 # Submission information
 
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **In formation**                     | **Note**                                                                                                                                              |
-+======================================+=======================================================================================================================================================+
-| Name                                 | Final project                                                                                                                                         |
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Type (Main, Mini or Basket)          | Main                                                                                                                                                  |
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Value                                | 45%                                                                                                                                                   |
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Due                                  | Thursday, April 7, 2022 at 3:03 p.m. ET for 2% pt bonus. Submissions accepted until Monday, April 11, 2022 at 3:03 p.m.                                |
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Submission instruction               | Submission: Via [Markus](https://markus-ds.teach.cs.toronto.edu/)                                                                                                            |
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Acc ommodations and extension policy | There are no routine extensions granted for the final project. In exceptional circumstances, you can work with your College Registrar and me on this. |
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **In formation**                    | **Note**                                                                                                                                              |
++=====================================+=======================================================================================================================================================+
+| Name                                | Final project                                                                                                                                         |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Type (Main, Mini or Basket)         | Main                                                                                                                                                  |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Value                               | 45%                                                                                                                                                   |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Due                                 | Thursday, April 7, 2022 at 3:03 p.m. ET for 2% pt bonus. Submissions accepted until Monday, April 11, 2022 at 3:03 p.m.                               |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Submission instruction              | Submission: Via [Markus](https://markus-ds.teach.cs.toronto.edu/)                                                                                     |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Accommodations and extension policy | There are no routine extensions granted for the final project. In exceptional circumstances, you can work with your College Registrar and me on this. |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 # What's the deliverable?
 
@@ -50,101 +49,160 @@ Your final submission will be a report that includes: 
 -   an executive summary 
 -   a technical report 
 -   consultant bio(s) and company ethics statement
--   code appendix that specifically documents how the web scraping, API and census work was done
+-   code appendix that specifically documents how the web scraping, API and census work was done, <yellow>with a focus on the ethical/professional considerations related to acquiring this data</yellow>
 
-You will need to further develop and answer the **research questions** relevant to the client, communicate in ways appropriate to the **audience**  for each section of the report, choose **appropriate methods**  and create **professional visualisations and tables**  to explain your results.
+You will need to further develop and answer the **research questions** relevant to the client, communicate in ways appropriate to the **audience**  for each section of the report, choose **appropriate methods** and create **professional visualizations and tables**  to explain your results.
 
-Your report must be written in a **reproducible**  Rmd, that Knits to __PDF__, and you will submit the PDF, Rmd and any images/extra data to MarkUs for the reproducibility component of your mark.
+Your report must be written in a **reproducible**  Rmd, that Knits to **PDF**, and you will submit the PDF, Rmd and any images/extra data to MarkUs for the reproducibility component of your mark.
 
 I will be providing a **template** for you to use.
 
-# Timeline 
+# Timeline
 
-__All times are 3:03 p.m. ET.__
+**All times are 3:03 p.m. ET.**
 
-- __March 18:__ Register your group/individual status by submit your company name, group members (may just be you)and NDA to the [form](https://forms.office.com/r/893zttwbsa).
+-   **March 18:** Register your group/individual status by submit your company name, group members (may just be you)and NDA to the [form](https://forms.office.com/r/893zttwbsa).
 
-- __April 4:__ Beginning of 'project focus' week. No other required tasks or new content.
+-   **April 4:** Beginning of 'project focus' week. No other required tasks or new content.
 
-- __April 7:__ deadline to submit for 2 percentage point BONUS
+-   **April 7:** deadline to submit for 2 percentage point BONUS
 
-- __April 11:__ final deadline to submit. 
-
+-   **April 11:** final deadline to submit.
 
 # Penalties to AVOID
+
 <aside>
+
 Due March 18 at 3:03 p.m. ET
-</aside>  
-  
-- __5 percentage point penalty__ for failing to correctly register as an individual/group by the deadline.
-  - This includes providing CORRECT details for all group members that will allow me to link you on MarkUs. (Your 'Contractor ID' is your UTORid!! Please don't get this wrong.)
-  - There should be 1 PDF PER PERSON, so a team of 3 should submit 3 NDA files AS PDFs to the form (i.e., don't merge).
-  
+
+</aside>
+
+-   **5 percentage point penalty** for failing to correctly register as an individual/group by the deadline.
+
+    -   This includes providing CORRECT details for all group members that will allow me to link you on MarkUs. (Your 'Contractor ID' is your UTORid!! Please don't get this wrong.)
+    -   There should be 1 PDF PER PERSON, so a team of 3 should submit 3 NDA files AS PDFs to the form (i.e., don't merge).
+
 <aside>
+
 Contractor ID = Your UTORid
-</aside>  
-  
-- __5 percentage point penalty__ for not submitting the Rmd that creates your PDF (this also applies if your PDF submission is made in Word etc.)  
+
+</aside>
+
+-   **5 percentage point penalty** for not submitting the Rmd that creates your PDF (this also applies if your PDF submission is made in Word etc.)
 
 # Steps
 
-## Step 1: Read the first client email and decide if you're working as a group or individual 
+## Step 1: Read the first client email and decide if you're working as a group or individual
 
+-   You can check the emails from your client [here](#email1).
 
-- You can check the emails from your client [here](#email1).   
+<aside>
 
-<aside>[Read the first email](https://sta303-bolton.github.io/sta303-w22-final-project/emails.html#email1)</aside>
+[Read the first email](https://sta303-bolton.github.io/sta303-w22-final-project/emails.html#email1)
 
-- You can work on your project alone or with up to three other students (regardless of section) for a group of __four total students__.  
-- The section you are enrolled in does not matter, you may work with students across sections/within the same section, etc.
-- You can find teammates with [Piazza](https://piazza.com/class/kx47tj4fmy65dg?cid=5).
-- My hope is that your final deliverable will be something you could include in your portfolio, so perhaps make sure all teammates are okay with publishing this publically at the end.
+</aside>
+
+-   You can work on your project alone or with up to three other students (regardless of section) for a group of **four total students**.\
+-   The section you are enrolled in does not matter, you may work with students across sections/within the same section, etc.
+-   You can find teammates with [Piazza](https://piazza.com/class/kx47tj4fmy65dg?cid=5).
+-   My hope is that your final deliverable will be something you could include in your portfolio, so perhaps make sure all teammates are okay with publishing this publicly at the end.
 
 ## Step 2: Create a consulting company
 
-- There are no criteria other than the name should be __professional__ (i.e., no rude words, resist overly obvious puns) and needs to be typable in ‘Latin script’, i.e., __the letters A to Z__  (with hyphens/accents if needed, just be careful the symbols can be Knit to pdf.)
+-   There are no criteria other than the name should be **professional** (i.e., no rude words, resist overly obvious puns) and needs to be typable in 'Latin script', i.e., **the letters A to Z**  (with hyphens/accents if needed, just be careful the symbols can be Knit to pdf.)
 
-## Step 3: Sign your NDAs 
+## Step 3: Sign your NDAs
 
 -   Non-disclosure agreements (NDAs) are a common legal agreement that consultants often enter into. It will outline who owns what, what can and cannot be shared publicly and a range of other legal points.
 
 -   For the purposes of this class, you don't have to worry about the 'legal-ese' and what you're actually agreeing to, because you are NOT actually agreeing to anything. BUT I do think you should see how much you can understand as it is realistic that you might have to comprehend and sign a document like this in future, as a professional.
 
--   If you're working in a team, __each member of the team must sign their own version__ and then ONE member will submit ALL the individual PDFS on behalf of the team.
+-   If you're working in a team, **each member of the team must sign their own version** and then ONE member will submit ALL the individual PDFS on behalf of the team.
 
     -   Note, if you have trouble contacting a remember and getting their form, this may be a sign they won't be easy to work with on the project. Likewise, please don't be *that* team member that everyone complains about for not doing any work.
 
     -   If there are team dynamic issues, LET ME KNOW ASAP, I can help you work on a solution, or split up the team (that won't be penalized).
-    
+
 <yellow>[Download PDF version](https://sta303-bolton.github.io/sta303-w22-final-project/nda/MINGAR%20NDA.pdf)</yellow>
 
 <yellow>[Download DOCX version](https://github.com/sta303-bolton/sta303-w22-final-project/raw/master/nda/MINGAR%20NDA.docx)</yellow>
 
-## Step 4: Submit your NDAs (and through this, register as group or individual) 
+## Step 4: Submit your NDAs (and through this, register as group or individual)
 
 -   By Friday, March 18 at 3:03 p.m. ET, you must submit your group/individual information through  [this form](https://forms.office.com/r/893zttwbsa), including everyone's NDAs. Only ONE member should submit on behalf of the group. If you're working individually, you just submit for yourself.
 
 -   If you **do not submit**  this information by the required date and time, there will be a **5 percentage point penalty**  applied to your final project grade.
 
-## Step 5: Work on your project 
-    
--   Access the data and template (TBA)
+## Step 5: Work on your project
+
+-   Access the data and template on the [Data and hints](#hints) page
+
 -   Use the [Hints](#hints) to:
-    - webscrape the device data,
-    - access the the postal code conversion file, and
-    - access the Canadian census data.
--   Make use of project office hours (TBA)
+
+    -   webscrape the device data,
+    -   access the the postal code conversion file, and
+    -   access the Canadian census data.
+
+-   Make use of project office hours (see schedule on the office hours page on Quercus)
+
 -   Week 12 is a 'project focus week', meaning no new content will be released on the project is your main focus for this class.
 
+### Suggested task list as posted Mar 25
+
+*Edited lightly, see the original [here](https://q.utoronto.ca/courses/253305/discussion_topics/1686233).*
+
+(If you're not quite on this schedule is all lost? No way! This list was in response to student questions at the time about how I might suggest they plan their work.)
+
+-   **Between now and early next week:**
+
+    -   Familiarizing yourself with the [project information](https://sta303-bolton.github.io/sta303-w22-final-project/)
+
+    -   Acquiring the **additional data** you have been instructed to.
+
+    -   **Cleaning** and **merging** data.
+
+    -   Refining **research questions**.
+
+    -   Could start preparing the **appendix** about acquiring the external data.
+
+-   **Bulk of next week:**
+
+    -   Finishing up **data prep** as informed by working on data **summaries**, **visualizations**, **models** and **model assumption checking** (and doing these things).
+
+    -   Keeping notes on **decisions** and **limitations**.
+
+    -   Beginning to write up your **methods** sections and prepare **tables**/**visualizations**.
+
+-   **Last week of term:**
+
+    -   Finishing any final parts of your analyses.
+
+    -   Writing up **methods**, **results**, **discussion** (+ **strengths** and **limitations**), **introduction** and **executive summary** (likely in that order).
+
+    -   Making sure **references** are set up well and are complete and that any text/ideas from other sources is quoted or paraphrased appropriately and cited.
+
+    -   Submitting your final project on MarkUs by 3:03 p.m. ET on April 7 for a +2% pt bonus on your final project mark **OR** submit by April 11 (3:03 p.m., of course).
 
 ## Step 6: Submit
-    
--   Submit all relevant files to reproduce your report. Note that is includes and image files that are not directly created by R. The data provided will already be present, but any new datasets you create will need to be uploaded.
--   Exception: Do NOT upload the post code conversion file or large version of the census API data. You should create appropriately sized datasets for this project from them and save and upload these.
-    -  You will document and explain the process by which you got and wangled these datasets, so that someone else could follow your process themselves, BUT you will ensure the licensed data is not actually provided.
-   - Why? This means that you can share (most of) this data and project in your own online portfolios, etc., but be very clear about what is and isn't appropriate to share publically.
 
+-   Submit all relevant files to reproduce your report. Note that is includes and image files that are not directly created by R. The data provided will already be present, but any new datasets you create will need to be uploaded.
+
+-   Exception: Do NOT upload the post code conversion file or large version of the census API data. You should create appropriately sized datasets for this project from them and save and upload these.
+
+    -   You will document and explain the process by which you got and wangled these datasets, so that someone else could follow your process themselves, BUT you will ensure the licensed data is not actually provided.
+
+-   Why? This means that you can share (most of) this data and project in your own online portfolios, etc., but be very clear about what is and isn't appropriate to share publicly.
+
+## Notes about bonus and submission dropboxes
+
+Due to the two deadlines, there will be two dropboxes on MarkUs for this assessment. To avoid confusion, the dropbox for the 2% bonus early submission will be open until the deadline on April 7. After that, the dropbox for the normal submission will be open from April 7 to 11 only for groups that <yellow>did not submit in the early round.</yellow>
+
+### Warning about the early dropbox
+
+Only submit your FINISHED project to the early dropbbox. __If you're not sure if you'll get it done by the deadline for the bonus, this is the one time I'll tell you NOT to do a safety submit.__ To ensure clarity for the grading team, anything submitted to the early dropbox WILL be considered your final submission.
+
+Not sure about what this means? PLEASE ASK.
 
 # Credits
 
-Thank you to [Sonia Markes](https://www.statistics.utoronto.ca/people/directories/graduate-students/sonia-markes) for contibuting to the background research and planning for this project.
+Thank you to [Sonia Markes](https://www.statistics.utoronto.ca/people/directories/graduate-students/sonia-markes) for contributing to the background research and planning for this project.

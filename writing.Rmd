@@ -1,0 +1,51 @@
+---
+title: "Writing feedback"
+output: 
+  distill::distill_article:
+    toc: true
+    toc_depth: 3
+---
+
+There have been 5 writing tasks as part of the knowledge basket. The prompts have useful information you may like to be aware of when writing your report, especially [Module 3](https://sta303-bolton.github.io/sta303-w22-courseguide/knowledge-basket-writing-and-peer-feedback.html#module-3-writing-task) and [Module 4](https://sta303-bolton.github.io/sta303-w22-courseguide/knowledge-basket-writing-and-peer-feedback.html#module-4-writing-task). 
+
+Below is feedback from writing TA Ian.
+
+## Feedback on Module 3 writing
+
+[This writing prompt](https://sta303-bolton.github.io/sta303-w22-courseguide/knowledge-basket-writing-and-peer-feedback.html#module-3-writing-task) asked you to write a __methods section__.
+
+-   Great job with the writing! This is just a reminder that you make sure that all of your sentences are clear and concise. Try to write well structured paragraphs for the methods section rather than a list with details about the methods used.
+
+-   It is helpful to clearly state the purpose of the study or the testable hypotheses at the start of the methods, particularly if no Introduction section is included.
+
+-   Make sure to include the total sample size, source of the data and/or how the data was obtained, and any important data wrangling (i.e., data filtering, calculating new variables) necessary to conduct the analysis.
+
+-   Clearly state the variables of interest: both the response and predictor variables.
+
+-   When presenting a model, it is important to define all model parameters.
+
+-   When using mixed effects models, you should clearly state which variables are fixed and random effects along with the reasoning behind the decision.
+
+-   For the structure of the methods, you can typically follow this general outline:
+
+    -   Stating the research objectives and purpose of the study
+
+    -   Introducing the data and relevant details (i.e., data source, sample size, variables of interest)
+
+    -   The statistical model and/or subsequent data analyses
+
+    -   Specific model details
+
+    -   Model validation/calibration, if applicable
+
+## Feedback on Module 4 writing
+
+[This writing prompt](https://sta303-bolton.github.io/sta303-w22-courseguide/knowledge-basket-writing-and-peer-feedback.html#module-4-writing-task) asked you to write an executive summary.
+
+-   Executive summaries are very similar to abstracts with the main difference being the targeted audience (see Table in 11.5.1). The main components of an executive summary include background & aim, key findings, and limitations.
+-   It is important to make sure that the writing style is non-technical as the audience is generally individuals that are not familiar with the specific details of statistical models and data analysis.
+-   The Background & Aim section should focus on the research question/objectives (explore factors that relate to drinking behaviour on a dry campus) rather than providing background knowledge on Poisson regression models.
+-   You can mention the type of statistical model used in the analysis and briefly the reasoning behind it (i.e., A zero-inflated Poisson model was used to accurately model the data as this model considers both drinkers and non-drinkers in the survey). Just be careful not to get into the finer details.
+-   The key findings can focus on the broad findings of the model, such as the mean number of drinks consumed, indicating significant effects between variables, and unimportant predictors of drinking, rather than significance testing and p-values.
+-   The limitations can be very helpful. Any concerns or caveats about the data and subsequent analysis can be presented here.
+-   Easy to interpret figures and tables that summarize the data and findings are very helpful in executive summaries.

@@ -2244,6 +2244,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <a href="index.html">Instructions</a>
 <a href="emails.html">Client emails</a>
 <a href="hints.html">Data and hints</a>
+<a href="writing.html">Writing feedback</a>
 <a href="help.html">Help</a>
 <a href="rubric.html">Rubric</a>
 <a href="outsiders.html">For interested outsiders</a>
@@ -2287,6 +2288,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#uploading-the-data-to-the-jupyterhub">Uploading the data to the JupyterHub</a></li>
 </ul></li>
 <li><a href="#getting-income-data-from-the-canadian-census">Getting income data from the Canadian census</a></li>
+<li><a href="#privacy">Privacy?</a></li>
 <li><a href="#other">Other</a></li>
 </ul>
 </nav>
@@ -2304,7 +2306,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="folders">Folders</h2>
 <ul>
 <li><p>The <code>data-raw</code> folder should have the raw data provided by the client, as well where the licensed data for the postcode conversion, the census data and your web scraping results should be saved. This file should NOT be made publicly available.</p></li>
-<li><p>The <code>data</code> folder should contain any datasets created in the <code>data-cleaning.Rmd</code> and used in <code>sta303-final-project.Rmd</code>.</p></li>
+<li><p>The <code>data</code> folder should contain any datasets created in the <code>data-prep.Rmd</code> and used in <code>sta303-final-project.Rmd</code>.</p></li>
 <li><p>The <code>cache</code> folder will appear after you set up the Canadian census data. It doesn’t not need to be submitted as part of you assessment.</p></li>
 </ul>
 <h2 id="files">Files</h2>
@@ -2506,8 +2508,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><p>Choose an appropriate year and make sure you specify/justify it in your write-up.</p></li>
 </ul>
 <h2 id="uploading-the-data-to-the-jupyterhub">Uploading the data to the JupyterHub</h2>
-<p><strong>You may need to compress the .sav file before uploading to ensure a smooth upload.</strong> It will automatically decompressed for you, upon upload.</p>
-<p>If you’re getting crashes on the JupyterHub, talk to the teaching team about <code>break_glass_in_case_of_emergency</code>.</p>
+<p><del><strong>You may need to compress the .sav file before uploading to ensure a smooth upload.</strong> It will automatically decompressed for you, upon upload.</del></p>
+<p>If you are using the JupyterHub, please use the <code>break_glass_in_case_of_emergency.Rds</code> in the <code>data-raw</code> folder. It is the result of the below code (i.e., it is <code>postcode</code>).</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># install.packages("haven")</span>
@@ -2560,6 +2562,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </code></pre>
 </div>
 </div>
+<h1 id="privacy">Privacy?</h1>
+<p>For this project, there are two distinct ways you should think about data protection and privacy:</p>
+<p><strong>1) As if you were really consultants working for a client. (Report world)</strong></p>
+<p>This will be what you consider in the writing of your report. What would a real consultant do for a really client.</p>
+<p><strong>2) As responsible students/statisticians at U of T. (GitHub/portfolio world)</strong></p>
+<p>This will be what you consider in sharing your report in the ‘real world’. To access the postcode data you need to agree to the U of T license around it (make sure you do this, even if you need to use the <code>break-glass</code> in the end). This means this file should NOT be shared on your GitHub or as part of any portfolio of your work. ‘Keep it secret, keep it safe’.</p>
+<p>Note, you also shouldn’t include your API key anywhere as that is private information about your account.</p>
 <h1 id="other">Other</h1>
 <ul>
 <li>If you have convergence issues using <code>glmer</code>, consider changing the optimizer: <code>control=glmerControl(optimizer="bobyqa",  optCtrl=list(maxfun=2e5))</code>. (add this to you <code>glmer</code> cal)</li>
