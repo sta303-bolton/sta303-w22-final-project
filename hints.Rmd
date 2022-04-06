@@ -227,11 +227,16 @@ For this project, there are two distinct ways you should think about data protec
 
 __1) As if you were really consultants working for a client. (Report world)__
 
-This will be what you consider in the writing of your report. What would a real consultant do for a really client. 
+This will be what you consider in the writing of your report. What would a real consultant do for a real client? 
 
 __2) As responsible students/statisticians at U of T. (GitHub/portfolio world)__
 
-This will be what you consider in sharing your report in the 'real world'. To access the postcode data you need to agree to the U of T license around it (make sure you do this, even if you need to use the `break-glass` in the end). This means this file should NOT be shared on your GitHub or as part of any portfolio of your work. 'Keep it secret, keep it safe'.
+This will be what you consider in sharing your report in the 'real world'. To access the postcode data you need to agree to the license around it (make sure you do this, even if you need to use the `break-glass` in the end). This means this file should NOT be shared on your GitHub or as part of any portfolio of your work. 'Keep it secret, keep it safe'. 
+
+A useful distinction: 
+
+- Private/protected data in `data-raw` folder and this should NOT go on GitHub.  
+- Publishable prepped data used directly in the report (as set up in `data-prep.Rmd`) in `data` folder and this could go on GitHub/your personal portfolio.
 
 Note, you also shouldn't include your API key anywhere as that is private information about your account.
 
