@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>STA303/1002 Winter 22 Final Project: Help</title>
@@ -1860,7 +1861,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2031,7 +2035,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.10.1/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2264,57 +2268,126 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#writing-centres">Writing centres</a></li>
-<li><a href="#sta3031002-office-hours">STA303/1002 office hours</a></li>
-<li><a href="#the-new-college-statistics-aid-centre">The New College Statistics Aid Centre</a></li>
-<li><a href="#mental-health-supports">Mental health supports</a></li>
+<li><a href="#writing-centres" id="toc-writing-centres">Writing
+centres</a></li>
+<li><a href="#sta3031002-office-hours"
+id="toc-sta3031002-office-hours">STA303/1002 office hours</a></li>
+<li><a href="#the-new-college-statistics-aid-centre"
+id="toc-the-new-college-statistics-aid-centre">The New College
+Statistics Aid Centre</a></li>
+<li><a href="#mental-health-supports"
+id="toc-mental-health-supports">Mental health supports</a></li>
 </ul>
 </nav>
 </div>
 <h1 id="writing-centres">Writing centres</h1>
-<p>You are eligible to work with the writing centre at the college or campus where you’re registered.</p>
+<p>You are eligible to work with the writing centre at the college or
+campus where you’re registered.</p>
 <ul>
-<li><p><a href="http://innis.utoronto.ca/current-students/academic/innis/writing-centre/">Innis College Writing Centre</a>, Innis College, Rooms 315 and 321.</p></li>
-<li><p><a href="http://www.newcollege.utoronto.ca/academics/writing-centre/">New College Writing Centre</a>, Wilson Hall, Rooms 2045 and 2047.</p></li>
-<li><p><a href="https://library.stmikes.utoronto.ca/research/">St. Michael’s Writing Centre</a>, Kelly Library Learning Commons.</p></li>
-<li><p><a href="http://www.trinity.utoronto.ca/student-services/support/writing-centre.html">Trinity College Writing Centre</a>, Trinity College, Academic Resource Centre, Room 3.</p></li>
-<li><p><a href="http://www.uc.utoronto.ca/writing-centre">University College Writing Centre</a>, University College, Rooms 259E, 259F, and 259G.</p></li>
-<li><p><a href="https://www.vic.utoronto.ca/current-students/registrars-office/writing-centre">Victoria College Writing Centre</a>, Online and telephone appointments only during the pandemic.</p></li>
-<li><p><a href="http://www.wdw.utoronto.ca/index.php/current_students/academic_writing_centre/">Woodsworth College Academic Writing Centre</a>, Woodsworth College, Room 214.</p></li>
+<li><p><a
+href="http://innis.utoronto.ca/current-students/academic/innis/writing-centre/">Innis
+College Writing Centre</a>, Innis College, Rooms 315 and 321.</p></li>
+<li><p><a
+href="http://www.newcollege.utoronto.ca/academics/writing-centre/">New
+College Writing Centre</a>, Wilson Hall, Rooms 2045 and 2047.</p></li>
+<li><p><a
+href="https://library.stmikes.utoronto.ca/research/">St. Michael’s
+Writing Centre</a>, Kelly Library Learning Commons.</p></li>
+<li><p><a
+href="http://www.trinity.utoronto.ca/student-services/support/writing-centre.html">Trinity
+College Writing Centre</a>, Trinity College, Academic Resource Centre,
+Room 3.</p></li>
+<li><p><a href="http://www.uc.utoronto.ca/writing-centre">University
+College Writing Centre</a>, University College, Rooms 259E, 259F, and
+259G.</p></li>
+<li><p><a
+href="https://www.vic.utoronto.ca/current-students/registrars-office/writing-centre">Victoria
+College Writing Centre</a>, Online and telephone appointments only
+during the pandemic.</p></li>
+<li><p><a
+href="http://www.wdw.utoronto.ca/index.php/current_students/academic_writing_centre/">Woodsworth
+College Academic Writing Centre</a>, Woodsworth College, Room
+214.</p></li>
 </ul>
-<p>Source: <a href="https://writing.utoronto.ca/writing-centres/arts-and-science/" class="uri">https://writing.utoronto.ca/writing-centres/arts-and-science/</a> (not sure when last updated)</p>
+<p>Source: <a
+href="https://writing.utoronto.ca/writing-centres/arts-and-science/"
+class="uri">https://writing.utoronto.ca/writing-centres/arts-and-science/</a>
+(not sure when last updated)</p>
 <h1 id="sta3031002-office-hours">STA303/1002 office hours</h1>
-<p>Please view the <a href="https://q.utoronto.ca/courses/253305/pages/office-hours">office hours page</a>. Additional TA hours will be offered (TBA).</p>
-<h1 id="the-new-college-statistics-aid-centre">The New College Statistics Aid Centre</h1>
-<p>The New College Statistics Aid Centre (NCSAC) will run via Zoom this semester and will continue to do so until further notice. </p>
-<p>If you are using Zoom <strong>at the University of Toronto</strong> for the first time<strong>,</strong> please visit <a href="https://act.utoronto.ca/zoom-information/" class="uri">https://act.utoronto.ca/zoom-information/</a> for instructions on activating your Zoom Education account. This licensed account is required in order to participate, <em>even if you already have an existing Zoom account using your mail.utoronto.ca email</em>. Please log in to Zoom through <a href="https://utoronto.zoom.us/%22">https://utoronto.zoom.us/</a> to ensure you are using the provisional managed Zoom Education account.</p>
+<p>Please view the <a
+href="https://q.utoronto.ca/courses/253305/pages/office-hours">office
+hours page</a>. Additional TA hours will be offered (TBA).</p>
+<h1 id="the-new-college-statistics-aid-centre">The New College
+Statistics Aid Centre</h1>
+<p>The New College Statistics Aid Centre (NCSAC) will run via Zoom this
+semester and will continue to do so until further notice. </p>
+<p>If you are using Zoom <strong>at the University of
+Toronto</strong> for the first time<strong>,</strong> please visit <a
+href="https://act.utoronto.ca/zoom-information/"
+class="uri">https://act.utoronto.ca/zoom-information/</a> for
+instructions on activating your Zoom Education account. This licensed
+account is required in order to participate, <em>even if you already
+have an existing Zoom account using your mail.utoronto.ca email</em>.
+Please log in to Zoom through <a
+href="https://utoronto.zoom.us/%22">https://utoronto.zoom.us/</a> to
+ensure you are using the provisional managed Zoom Education account.</p>
 <ol type="1">
-<li><p>The students should participate through the Zoom links listed below, corresponding to each TA. <strong>They</strong> <strong>must use their U of T account/email address to participate</strong>. Otherwise, they will not be able to join the room.</p></li>
-<li><p>Students may have to wait in a Zoom waiting room if the TA is occupied with another student—they will be admitted as soon as the TA is finished.</p></li>
-<li><p><strong>Students should type in their “Name – Course Code” as soon as they enter the room.</strong></p></li>
+<li><p>The students should participate through the Zoom links listed
+below, corresponding to each TA. <strong>They</strong> <strong>must use
+their U of T account/email address to participate</strong>. Otherwise,
+they will not be able to join the room.</p></li>
+<li><p>Students may have to wait in a Zoom waiting room if the TA is
+occupied with another student—they will be admitted as soon as the TA is
+finished.</p></li>
+<li><p><strong>Students should type in their “Name – Course Code” as
+soon as they enter the room.</strong></p></li>
 </ol>
-<p>The schedule is as follows; the time zone is EST until March 12 and EDT thereafter.</p>
-<p><strong>January 17 to April 8 (open during Reading Week):</strong></p>
-<h4 id="mondays-600-p.m.-900-p.m.-lei-liam-sun-lei-is-also-one-of-our-sta303-tas">Mondays: 6:00 p.m. – 9:00 p.m.  <em>Lei (Liam) Sun*</em> <strong>(Lei is also one of our STA303 TAs!)</strong></h4>
-<p>Zoom link: <a href="https://utoronto.zoom.us/j/84303288261" class="uri">https://utoronto.zoom.us/j/84303288261</a><br />
+<p>The schedule is as follows; the time zone is EST until March 12 and
+EDT thereafter.</p>
+<p><strong>January 17 to April 8 (open during Reading
+Week):</strong></p>
+<h4
+id="mondays-600-p.m.-900-p.m.-lei-liam-sun-lei-is-also-one-of-our-sta303-tas">Mondays:
+6:00 p.m. – 9:00 p.m.  <em>Lei (Liam) Sun*</em> <strong>(Lei is also one
+of our STA303 TAs!)</strong></h4>
+<p>Zoom link: <a href="https://utoronto.zoom.us/j/84303288261"
+class="uri">https://utoronto.zoom.us/j/84303288261</a><br />
 <em>(Note: No office hours on Family Day, Feb. 21)</em></p>
-<h4 id="tuesdays-700-p.m.-1000-p.m.-angela-wang">Tuesdays: 7:00 p.m. – 10:00 p.m.  <em>Angela Wang*</em></h4>
-<p>Zoom link: <a href="https://utoronto.zoom.us/j/82959478053" class="uri">https://utoronto.zoom.us/j/82959478053</a></p>
-<h4 id="wednesdays-900-a.m.-1200-p.m.-george-stefan">Wednesdays: 9:00 a.m. – 12:00 p.m.  <em>George Stefan</em></h4>
-<p>Zoom link: <a href="https://utoronto.zoom.us/j/82151419286" class="uri">https://utoronto.zoom.us/j/82151419286</a></p>
-<h4 id="thursdays-200-p.m.-500-p.m.-david-veitch">Thursdays: 2:00 p.m. – 5:00 p.m.  <em>David Veitch</em></h4>
-<p>Zoom link: <a href="https://utoronto.zoom.us/j/82238702093.">https://utoronto.zoom.us/j/82238702093</a></p>
+<h4 id="tuesdays-700-p.m.-1000-p.m.-angela-wang">Tuesdays: 7:00 p.m. –
+10:00 p.m.  <em>Angela Wang*</em></h4>
+<p>Zoom link: <a href="https://utoronto.zoom.us/j/82959478053"
+class="uri">https://utoronto.zoom.us/j/82959478053</a></p>
+<h4 id="wednesdays-900-a.m.-1200-p.m.-george-stefan">Wednesdays: 9:00
+a.m. – 12:00 p.m.  <em>George Stefan</em></h4>
+<p>Zoom link: <a href="https://utoronto.zoom.us/j/82151419286"
+class="uri">https://utoronto.zoom.us/j/82151419286</a></p>
+<h4 id="thursdays-200-p.m.-500-p.m.-david-veitch">Thursdays: 2:00 p.m. –
+5:00 p.m.  <em>David Veitch</em></h4>
+<p>Zoom link: <a
+href="https://utoronto.zoom.us/j/82238702093.">https://utoronto.zoom.us/j/82238702093</a></p>
 <p><em>(*) Can help with ACT courses.</em></p>
 <h1 id="mental-health-supports">Mental health supports</h1>
-<p>You may find yourself feeling overwhelmed, depressed, or anxious. Lots of people feel the same way. There is help available from mental health professionals 24 hours a day via online and phone-based services. Here are some that are available to U of T students:</p>
+<p>You may find yourself feeling overwhelmed, depressed, or anxious.
+Lots of people feel the same way. There is help available from mental
+health professionals 24 hours a day via online and phone-based services.
+Here are some that are available to U of T students:</p>
 <ul>
-<li><p><a href="https://www.studentlife.utoronto.ca/hwc/myssp">MySSP - My Student Support Program</a> 1-844-451-9700, or outside of Canada call 001-416-380-6578</p></li>
-<li><p><a href="https://good2talk.ca/">Good2Talk Student Helpline</a> 1-866-925-5454, or text GOOD2TALK to 686868</p></li>
-<li><p><a href="https://www.torontodistresscentre.com/">Distress Centres of Greater Toronto</a> 416-408-4357, or text 45645</p></li>
+<li><p><a href="https://www.studentlife.utoronto.ca/hwc/myssp">MySSP -
+My Student Support Program</a> 1-844-451-9700, or outside of Canada call
+001-416-380-6578</p></li>
+<li><p><a href="https://good2talk.ca/">Good2Talk Student Helpline</a>
+1-866-925-5454, or text GOOD2TALK to 686868</p></li>
+<li><p><a href="https://www.torontodistresscentre.com/">Distress Centres
+of Greater Toronto</a> 416-408-4357, or text 45645</p></li>
 </ul>
-<p>There is also the new Navi tool for U of T students, it is a chatbot and your questions are totally anonymous. <a href="http://uoft.me/navi" class="uri">http://uoft.me/navi</a></p>
-<p>The student union are also curating a list here: <a href="https://www.utsu.ca/mental-health/" class="uri">https://www.utsu.ca/mental-health/</a></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>There is also the new Navi tool for U of T students, it is a chatbot
+and your questions are totally anonymous. <a href="http://uoft.me/navi"
+class="uri">http://uoft.me/navi</a></p>
+<p>The student union are also curating a list here: <a
+href="https://www.utsu.ca/mental-health/"
+class="uri">https://www.utsu.ca/mental-health/</a></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2330,7 +2403,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">
-<p>This site was made with the distill R package <i class="fab fa-r-project"></i>, powered by the distill web framework <i class="fab fa-js"></i></span>.</p>
+<p>This site was made with the distill R package
+<i class="fab fa-r-project"></i>, powered by the distill web framework
+<i class="fab fa-js"></i></span>.</p>
 </div>
 <!--/radix_placeholder_navigation_after_body-->
 

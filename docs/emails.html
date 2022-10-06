@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>STA303/1002 Winter 22 Final Project: Client emails</title>
@@ -1860,7 +1861,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2031,7 +2035,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.10.1/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2264,9 +2268,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#email1">Email 1</a>
+<li><a href="#email1" id="toc-email1">Email 1</a>
 <ul>
-<li><a href="#text-for-screen-readers">Text for screen readers</a></li>
+<li><a href="#text-for-screen-readers"
+id="toc-text-for-screen-readers">Text for screen readers</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -2277,31 +2282,74 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <h2 id="text-for-screen-readers">Text for screen readers</h2>
 <p>Hi,</p>
-<p>Thanks again for the great work on the <em>Small Steps</em> project last year. I’m reaching out with another piece of work I’m hoping you can take on.</p>
-<p>I’ve included some information below, but the big idea is that we want some specialist statistics support to help us better understand issues around our new lines of wearables fitness trackers/smart watches and our customers.</p>
-<p><strong>Company background:</strong> MINGAR started out making GPS units for marine vehicles and military personnel, before branching out to personal GPS units for runners in the early 2000s. Over the years, we have developed a number of products aimed at outdoor recreation, including high-end fitness tracking wearable devices.</p>
-<p><strong>Competition:</strong> Traditionally, our main competitor in the fitness tracker space is Bitfit, a company that has exclusively focused on personal fitness tracking devices. Their devices are smaller, the price point is lower, and their app currently offers more insights. They have designed and marketed their product for the average consumer who is interested in living a healthy lifestyle.</p>
-<p><strong>Situation:</strong> Wearables are a growing market. We want to not only grow with that market, but also gain market share. To compete with Bitfit, we’ve recently expanded our product offerings. We’ve added the ‘Active’ and ‘Advance’ lines at a more approachable price point for the average </p>
-<p>We’d like to bring you on board to help us with some key insights for marketing and product considerations. Some of our key questions are below. I’d also like to highlight that ethical treatment of our customer data is a key part of our business values, and it would be great to emphasize these considerations in your report.</p>
+<p>Thanks again for the great work on the <em>Small Steps</em> project
+last year. I’m reaching out with another piece of work I’m hoping you
+can take on.</p>
+<p>I’ve included some information below, but the big idea is that we
+want some specialist statistics support to help us better understand
+issues around our new lines of wearables fitness trackers/smart watches
+and our customers.</p>
+<p><strong>Company background:</strong> MINGAR started out making GPS
+units for marine vehicles and military personnel, before branching out
+to personal GPS units for runners in the early 2000s. Over the years, we
+have developed a number of products aimed at outdoor recreation,
+including high-end fitness tracking wearable devices.</p>
+<p><strong>Competition:</strong> Traditionally, our main competitor in
+the fitness tracker space is Bitfit, a company that has exclusively
+focused on personal fitness tracking devices. Their devices are smaller,
+the price point is lower, and their app currently offers more insights.
+They have designed and marketed their product for the average consumer
+who is interested in living a healthy lifestyle.</p>
+<p><strong>Situation:</strong> Wearables are a growing market. We want
+to not only grow with that market, but also gain market share. To
+compete with Bitfit, we’ve recently expanded our product offerings.
+We’ve added the ‘Active’ and ‘Advance’ lines at a more approachable
+price point for the average </p>
+<p>We’d like to bring you on board to help us with some key insights for
+marketing and product considerations. Some of our key questions are
+below. I’d also like to highlight that ethical treatment of our customer
+data is a key part of our business values, and it would be great to
+emphasize these considerations in your report.</p>
 <p><strong>Questions:</strong></p>
 <ol type="1">
-<li><p>Our <strong>marketing team</strong> wants information to inform their strategy​ in the Canadian market​. Who are our new customers? How are buyers of the newer and more affordable ‘Active’ and ‘Advance’ products different to our traditional customers?</p></li>
-<li><p>Our <strong>social media team</strong> is currently tracking a trend in complaints that our devices are performing poorly for users with darker skin, particularly with respect to <strong>sleep scores</strong>. Could you investigate this? We don’t collect data on race or ethnicity, but want to ensure we’re taking this concern seriously as having our devices labeled as ‘racist’ is would be very damaging and of course not in line with our values as a company.  </p></li>
+<li><p>Our <strong>marketing team</strong> wants information to inform
+their strategy​ in the Canadian market​. Who are our new customers? How
+are buyers of the newer and more affordable ‘Active’ and ‘Advance’
+products different to our traditional customers?</p></li>
+<li><p>Our <strong>social media team</strong> is currently tracking a
+trend in complaints that our devices are performing poorly for users
+with darker skin, particularly with respect to <strong>sleep
+scores</strong>. Could you investigate this? We don’t collect data on
+race or ethnicity, but want to ensure we’re taking this concern
+seriously as having our devices labeled as ‘racist’ is would be very
+damaging and of course not in line with our values as a
+company.  </p></li>
 </ol>
-<p>Obviously, this data is sensitive and of commercial significance. NDAs will be required from anyone working on the project.</p>
+<p>Obviously, this data is sensitive and of commercial significance.
+NDAs will be required from anyone working on the project.</p>
 <p><strong>I’ll be able to provide:</strong> </p>
 <ul>
 <li><p>Customer-level data (age, gender, etc.)</p></li>
 <li><p>Customer-device linkage data</p></li>
-<li><p>Links to a resource for device data (<a href="https://fitnesstrackerinfohub.netlify.app/" class="uri">https://fitnesstrackerinfohub.netlify.app/</a>)</p></li>
+<li><p>Links to a resource for device data (<a
+href="https://fitnesstrackerinfohub.netlify.app/"
+class="uri">https://fitnesstrackerinfohub.netlify.app/</a>)</p></li>
 </ul>
-<p>Let me know if you have any questions, and if you’re ready to get the ball rolling, please complete this NDA (docx or pdf) and submit them through our NDA portal. After that, I’ll reach out with the data. Would be great if the final deliverable could have a summary targeted for the Board of Directors, as well as a more technical piece for our in-house analyst team to look over as well.</p>
-<p>I assume same fee structure as last time applies? That will be fine on our end. Will pay hourly with a cap at 40 hours unless otherwise discussed.</p>
+<p>Let me know if you have any questions, and if you’re ready to get the
+ball rolling, please complete this NDA (docx or pdf) and submit them
+through our NDA portal. After that, I’ll reach out with the data. Would
+be great if the final deliverable could have a summary targeted for the
+Board of Directors, as well as a more technical piece for our in-house
+analyst team to look over as well.</p>
+<p>I assume same fee structure as last time applies? That will be fine
+on our end. Will pay hourly with a cap at 40 hours unless otherwise
+discussed.</p>
 <p>Best,</p>
 <p>Roberta Fettucine<br />
 </p>
 <p>Product Manager, Wearables | MINGAR</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2317,7 +2365,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">
-<p>This site was made with the distill R package <i class="fab fa-r-project"></i>, powered by the distill web framework <i class="fab fa-js"></i></span>.</p>
+<p>This site was made with the distill R package
+<i class="fab fa-r-project"></i>, powered by the distill web framework
+<i class="fab fa-js"></i></span>.</p>
 </div>
 <!--/radix_placeholder_navigation_after_body-->
 

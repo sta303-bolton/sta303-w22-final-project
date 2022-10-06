@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>STA303/1002 Winter 22 Final Project</title>
@@ -1863,7 +1864,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2034,7 +2038,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.10.1/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2258,7 +2262,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1>STA303/1002 Winter 22 Final Project</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Instructions for the STA303/1002 final project (and information to help prospective employers/clients, interested 2nd cousins and whoever else better understand student achievements and skills).</p></p>
+<p><p>Instructions for the STA303/1002 final project (and information to
+help prospective employers/clients, interested 2nd cousins and whoever
+else better understand student achievements and skills).</p></p>
 </div>
 
 
@@ -2267,33 +2273,60 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#submission-information">Submission information</a></li>
-<li><a href="#whats-the-deliverable">What’s the deliverable?</a></li>
-<li><a href="#timeline">Timeline</a></li>
-<li><a href="#penalties-to-avoid">Penalties to AVOID</a></li>
-<li><a href="#steps">Steps</a>
+<li><a href="#submission-information"
+id="toc-submission-information">Submission information</a></li>
+<li><a href="#whats-the-deliverable"
+id="toc-whats-the-deliverable">What’s the deliverable?</a></li>
+<li><a href="#timeline" id="toc-timeline">Timeline</a></li>
+<li><a href="#penalties-to-avoid" id="toc-penalties-to-avoid">Penalties
+to AVOID</a></li>
+<li><a href="#steps" id="toc-steps">Steps</a>
 <ul>
-<li><a href="#step-1-read-the-first-client-email-and-decide-if-youre-working-as-a-group-or-individual">Step 1: Read the first client email and decide if you’re working as a group or individual</a></li>
-<li><a href="#step-2-create-a-consulting-company">Step 2: Create a consulting company</a></li>
-<li><a href="#step-3-sign-your-ndas">Step 3: Sign your NDAs</a></li>
-<li><a href="#step-4-submit-your-ndas-and-through-this-register-as-group-or-individual">Step 4: Submit your NDAs (and through this, register as group or individual)</a></li>
-<li><a href="#step-5-work-on-your-project">Step 5: Work on your project</a>
+<li><a
+href="#step-1-read-the-first-client-email-and-decide-if-youre-working-as-a-group-or-individual"
+id="toc-step-1-read-the-first-client-email-and-decide-if-youre-working-as-a-group-or-individual">Step
+1: Read the first client email and decide if you’re working as a group
+or individual</a></li>
+<li><a href="#step-2-create-a-consulting-company"
+id="toc-step-2-create-a-consulting-company">Step 2: Create a consulting
+company</a></li>
+<li><a href="#step-3-sign-your-ndas" id="toc-step-3-sign-your-ndas">Step
+3: Sign your NDAs</a></li>
+<li><a
+href="#step-4-submit-your-ndas-and-through-this-register-as-group-or-individual"
+id="toc-step-4-submit-your-ndas-and-through-this-register-as-group-or-individual">Step
+4: Submit your NDAs (and through this, register as group or
+individual)</a></li>
+<li><a href="#step-5-work-on-your-project"
+id="toc-step-5-work-on-your-project">Step 5: Work on your project</a>
 <ul>
-<li><a href="#suggested-task-list-as-posted-mar-25">Suggested task list as posted Mar 25</a></li>
+<li><a href="#suggested-task-list-as-posted-mar-25"
+id="toc-suggested-task-list-as-posted-mar-25">Suggested task list as
+posted Mar 25</a></li>
 </ul></li>
-<li><a href="#step-6-submit">Step 6: Submit</a></li>
-<li><a href="#notes-about-bonus-and-submission-dropboxes">Notes about bonus and submission dropboxes</a>
+<li><a href="#step-6-submit" id="toc-step-6-submit">Step 6:
+Submit</a></li>
+<li><a href="#notes-about-bonus-and-submission-dropboxes"
+id="toc-notes-about-bonus-and-submission-dropboxes">Notes about bonus
+and submission dropboxes</a>
 <ul>
-<li><a href="#warning-about-the-early-dropbox">Warning about the early dropbox</a></li>
+<li><a href="#warning-about-the-early-dropbox"
+id="toc-warning-about-the-early-dropbox">Warning about the early
+dropbox</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#credits">Credits</a></li>
+<li><a href="#credits" id="toc-credits">Credits</a></li>
 </ul>
 </nav>
 </div>
-<p><yellow><em>Last updated:</em> 2022-04-06 00:15</yellow></p>
-<p>Your final project for STA303/1002 is a consulting project for MINGAR. You will be analyzing data about their customers and creating a report appropriate for the Board of Directors.</p>
-<p><em>Note: MINGAR isn’t a real company, it would be massively reckless to provide 600 people with customer data with this level of detail. It would be very easy to identify individuals from data like this. That said, this dataset is based on real research and trends, and my own experiences running a small consulting company.</em></p>
+<p>Your final project for STA303/1002 is a consulting project for
+MINGAR. You will be analyzing data about their customers and creating a
+report appropriate for the Board of Directors.</p>
+<p><em>Note: MINGAR isn’t a real company, it would be massively reckless
+to provide 600 people with customer data with this level of detail. It
+would be very easy to identify individuals from data like this. That
+said, this dataset is based on real research and trends, and my own
+experiences running a small consulting company.</em></p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="images/mingar-logo-small.png" width="525" style="display: block; margin: auto;" /></p>
 </div>
@@ -2324,15 +2357,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </tr>
 <tr class="even">
 <td>Due</td>
-<td>Thursday, April 7, 2022 at 3:03 p.m. ET for 2% pt bonus. Submissions accepted until Monday, April 11, 2022 at 3:03 p.m.</td>
+<td>Thursday, April 7, 2022 at 3:03 p.m. ET for 2% pt bonus. Submissions
+accepted until Monday, April 11, 2022 at 3:03 p.m.</td>
 </tr>
 <tr class="odd">
 <td>Submission instruction</td>
-<td>Submission: Via <a href="https://markus-ds.teach.cs.toronto.edu/">Markus</a></td>
+<td>Submission: Via <a
+href="https://markus-ds.teach.cs.toronto.edu/">Markus</a></td>
 </tr>
 <tr class="even">
 <td>Accommodations and extension policy</td>
-<td>There are no routine extensions granted for the final project. In exceptional circumstances, you can work with your College Registrar and me on this.</td>
+<td>There are no routine extensions granted for the final project. In
+exceptional circumstances, you can work with your College Registrar and
+me on this.</td>
 </tr>
 </tbody>
 </table>
@@ -2343,17 +2380,32 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>an executive summary </li>
 <li>a technical report </li>
 <li>consultant bio(s) and company ethics statement</li>
-<li>code appendix that specifically documents how the web scraping, API and census work was done, <yellow>with a focus on the ethical/professional considerations related to acquiring this data</yellow></li>
+<li>code appendix that specifically documents how the web scraping, API
+and census work was done, <yellow>with a focus on the
+ethical/professional considerations related to acquiring this
+data</yellow></li>
 </ul>
-<p>You will need to further develop and answer the <strong>research questions</strong> relevant to the client, communicate in ways appropriate to the <strong>audience</strong>  for each section of the report, choose <strong>appropriate methods</strong> and create <strong>professional visualizations and tables</strong>  to explain your results.</p>
-<p>Your report must be written in a <strong>reproducible</strong>  Rmd, that Knits to <strong>PDF</strong>, and you will submit the PDF, Rmd and any images/extra data to MarkUs for the reproducibility component of your mark.</p>
+<p>You will need to further develop and answer the <strong>research
+questions</strong> relevant to the client, communicate in ways
+appropriate to the <strong>audience</strong>  for each section of the
+report, choose <strong>appropriate methods</strong> and
+create <strong>professional visualizations and tables</strong>  to
+explain your results.</p>
+<p>Your report must be written in a <strong>reproducible</strong>  Rmd,
+that Knits to <strong>PDF</strong>, and you will submit the PDF, Rmd and
+any images/extra data to MarkUs for the reproducibility component of
+your mark.</p>
 <p>I will be providing a <strong>template</strong> for you to use.</p>
 <h1 id="timeline">Timeline</h1>
 <p><strong>All times are 3:03 p.m. ET.</strong></p>
 <ul>
-<li><p><strong>March 18:</strong> Register your group/individual status by submit your company name, group members (may just be you)and NDA to the <a href="https://forms.office.com/r/893zttwbsa">form</a>.</p></li>
-<li><p><strong>April 4:</strong> Beginning of ‘project focus’ week. No other required tasks or new content.</p></li>
-<li><p><strong>April 7:</strong> deadline to submit for 2 percentage point BONUS</p></li>
+<li><p><strong>March 18:</strong> Register your group/individual status
+by submit your company name, group members (may just be you)and NDA to
+the <a href="https://forms.office.com/r/893zttwbsa">form</a>.</p></li>
+<li><p><strong>April 4:</strong> Beginning of ‘project focus’ week. No
+other required tasks or new content.</p></li>
+<li><p><strong>April 7:</strong> deadline to submit for 2 percentage
+point BONUS</p></li>
 <li><p><strong>April 11:</strong> final deadline to submit.</p></li>
 </ul>
 <h1 id="penalties-to-avoid">Penalties to AVOID</h1>
@@ -2361,109 +2413,208 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>Due March 18 at 3:03 p.m. ET</p>
 </aside>
 <ul>
-<li><p><strong>5 percentage point penalty</strong> for failing to correctly register as an individual/group by the deadline.</p>
+<li><p><strong>5 percentage point penalty</strong> for failing to
+correctly register as an individual/group by the deadline.</p>
 <ul>
-<li>This includes providing CORRECT details for all group members that will allow me to link you on MarkUs. (Your ‘Contractor ID’ is your UTORid!! Please don’t get this wrong.)</li>
-<li>There should be 1 PDF PER PERSON, so a team of 3 should submit 3 NDA files AS PDFs to the form (i.e., don’t merge).</li>
+<li>This includes providing CORRECT details for all group members that
+will allow me to link you on MarkUs. (Your ‘Contractor ID’ is your
+UTORid!! Please don’t get this wrong.)</li>
+<li>There should be 1 PDF PER PERSON, so a team of 3 should submit 3 NDA
+files AS PDFs to the form (i.e., don’t merge).</li>
 </ul></li>
 </ul>
 <aside>
 <p>Contractor ID = Your UTORid</p>
 </aside>
 <ul>
-<li><strong>5 percentage point penalty</strong> for not submitting the Rmd that creates your PDF (this also applies if your PDF submission is made in Word etc.)</li>
+<li><strong>5 percentage point penalty</strong> for not submitting the
+Rmd that creates your PDF (this also applies if your PDF submission is
+made in Word etc.)</li>
 </ul>
 <h1 id="steps">Steps</h1>
-<h2 id="step-1-read-the-first-client-email-and-decide-if-youre-working-as-a-group-or-individual">Step 1: Read the first client email and decide if you’re working as a group or individual</h2>
+<h2
+id="step-1-read-the-first-client-email-and-decide-if-youre-working-as-a-group-or-individual">Step
+1: Read the first client email and decide if you’re working as a group
+or individual</h2>
 <ul>
-<li>You can check the emails from your client <a href="#email1">here</a>.</li>
+<li>You can check the emails from your client <a
+href="#email1">here</a>.</li>
 </ul>
 <aside>
-<p><a href="https://sta303-bolton.github.io/sta303-w22-final-project/emails.html#email1">Read the first email</a></p>
+<p><a
+href="https://sta303-bolton.github.io/sta303-w22-final-project/emails.html#email1">Read
+the first email</a></p>
 </aside>
 <ul>
-<li>You can work on your project alone or with up to three other students (regardless of section) for a group of <strong>four total students</strong>.<br />
+<li>You can work on your project alone or with up to three other
+students (regardless of section) for a group of <strong>four total
+students</strong>.<br />
 </li>
-<li>The section you are enrolled in does not matter, you may work with students across sections/within the same section, etc.</li>
-<li>You can find teammates with <a href="https://piazza.com/class/kx47tj4fmy65dg?cid=5">Piazza</a>.</li>
-<li>My hope is that your final deliverable will be something you could include in your portfolio, so perhaps make sure all teammates are okay with publishing this publicly at the end.</li>
+<li>The section you are enrolled in does not matter, you may work with
+students across sections/within the same section, etc.</li>
+<li>You can find teammates with <a
+href="https://piazza.com/class/kx47tj4fmy65dg?cid=5">Piazza</a>.</li>
+<li>My hope is that your final deliverable will be something you could
+include in your portfolio, so perhaps make sure all teammates are okay
+with publishing this publicly at the end.</li>
 </ul>
-<h2 id="step-2-create-a-consulting-company">Step 2: Create a consulting company</h2>
+<h2 id="step-2-create-a-consulting-company">Step 2: Create a consulting
+company</h2>
 <ul>
-<li>There are no criteria other than the name should be <strong>professional</strong> (i.e., no rude words, resist overly obvious puns) and needs to be typable in ‘Latin script’, i.e., <strong>the letters A to Z</strong>  (with hyphens/accents if needed, just be careful the symbols can be Knit to pdf.)</li>
+<li>There are no criteria other than the name should be
+<strong>professional</strong> (i.e., no rude words, resist overly
+obvious puns) and needs to be typable in ‘Latin script’,
+i.e., <strong>the letters A to Z</strong>  (with hyphens/accents if
+needed, just be careful the symbols can be Knit to pdf.)</li>
 </ul>
 <h2 id="step-3-sign-your-ndas">Step 3: Sign your NDAs</h2>
 <ul>
-<li><p>Non-disclosure agreements (NDAs) are a common legal agreement that consultants often enter into. It will outline who owns what, what can and cannot be shared publicly and a range of other legal points.</p></li>
-<li><p>For the purposes of this class, you don’t have to worry about the ‘legal-ese’ and what you’re actually agreeing to, because you are NOT actually agreeing to anything. BUT I do think you should see how much you can understand as it is realistic that you might have to comprehend and sign a document like this in future, as a professional.</p></li>
-<li><p>If you’re working in a team, <strong>each member of the team must sign their own version</strong> and then ONE member will submit ALL the individual PDFS on behalf of the team.</p>
+<li><p>Non-disclosure agreements (NDAs) are a common legal agreement
+that consultants often enter into. It will outline who owns what, what
+can and cannot be shared publicly and a range of other legal
+points.</p></li>
+<li><p>For the purposes of this class, you don’t have to worry about the
+‘legal-ese’ and what you’re actually agreeing to, because you are NOT
+actually agreeing to anything. BUT I do think you should see how much
+you can understand as it is realistic that you might have to comprehend
+and sign a document like this in future, as a professional.</p></li>
+<li><p>If you’re working in a team, <strong>each member of the team must
+sign their own version</strong> and then ONE member will submit ALL the
+individual PDFS on behalf of the team.</p>
 <ul>
-<li><p>Note, if you have trouble contacting a remember and getting their form, this may be a sign they won’t be easy to work with on the project. Likewise, please don’t be <em>that</em> team member that everyone complains about for not doing any work.</p></li>
-<li><p>If there are team dynamic issues, LET ME KNOW ASAP, I can help you work on a solution, or split up the team (that won’t be penalized).</p></li>
+<li><p>Note, if you have trouble contacting a member and getting their
+form, this may be a sign they won’t be easy to work with on the project.
+Likewise, please don’t be <em>that</em> team member that everyone
+complains about for not doing any work.</p></li>
+<li><p>If there are team dynamic issues, LET ME KNOW ASAP, I can help
+you work on a solution, or split up the team (that won’t be
+penalized).</p></li>
 </ul></li>
 </ul>
-<p><yellow><a href="https://sta303-bolton.github.io/sta303-w22-final-project/nda/MINGAR%20NDA.pdf">Download PDF version</a></yellow></p>
-<p><yellow><a href="https://github.com/sta303-bolton/sta303-w22-final-project/raw/master/nda/MINGAR%20NDA.docx">Download DOCX version</a></yellow></p>
-<h2 id="step-4-submit-your-ndas-and-through-this-register-as-group-or-individual">Step 4: Submit your NDAs (and through this, register as group or individual)</h2>
+<p><yellow><a
+href="https://sta303-bolton.github.io/sta303-w22-final-project/nda/MINGAR%20NDA.pdf">Download
+PDF version</a></yellow></p>
+<p><yellow><a
+href="https://github.com/sta303-bolton/sta303-w22-final-project/raw/master/nda/MINGAR%20NDA.docx">Download
+DOCX version</a></yellow></p>
+<h2
+id="step-4-submit-your-ndas-and-through-this-register-as-group-or-individual">Step
+4: Submit your NDAs (and through this, register as group or
+individual)</h2>
 <ul>
-<li><p>By Friday, March 18 at 3:03 p.m. ET, you must submit your group/individual information through  <a href="https://forms.office.com/r/893zttwbsa">this form</a>, including everyone’s NDAs. Only ONE member should submit on behalf of the group. If you’re working individually, you just submit for yourself.</p></li>
-<li><p>If you <strong>do not submit</strong>  this information by the required date and time, there will be a <strong>5 percentage point penalty</strong>  applied to your final project grade.</p></li>
+<li><p>By Friday, March 18 at 3:03 p.m. ET, you must submit your
+group/individual information through  <a
+href="https://forms.office.com/r/893zttwbsa">this form</a>, including
+everyone’s NDAs. Only ONE member should submit on behalf of the group.
+If you’re working individually, you just submit for yourself.</p></li>
+<li><p>If you <strong>do not submit</strong>  this information by the
+required date and time, there will be a <strong>5 percentage point
+penalty</strong>  applied to your final project grade.</p></li>
 </ul>
 <h2 id="step-5-work-on-your-project">Step 5: Work on your project</h2>
 <ul>
-<li><p>Access the data and template on the <a href="#hints">Data and hints</a> page</p></li>
+<li><p>Access the data and template on the <a href="#hints">Data and
+hints</a> page</p></li>
 <li><p>Use the <a href="#hints">Hints</a> to:</p>
 <ul>
 <li>webscrape the device data,</li>
 <li>access the the postal code conversion file, and</li>
 <li>access the Canadian census data.</li>
 </ul></li>
-<li><p>Make use of project office hours (see schedule on the office hours page on Quercus)</p></li>
-<li><p>Week 12 is a ‘project focus week’, meaning no new content will be released on the project is your main focus for this class.</p></li>
+<li><p>Make use of project office hours (see schedule on the office
+hours page on Quercus)</p></li>
+<li><p>Week 12 is a ‘project focus week’, meaning no new content will be
+released on the project is your main focus for this class.</p></li>
 </ul>
-<h3 id="suggested-task-list-as-posted-mar-25">Suggested task list as posted Mar 25</h3>
-<p><em>Edited lightly, see the original <a href="https://q.utoronto.ca/courses/253305/discussion_topics/1686233">here</a>.</em></p>
-<p>(If you’re not quite on this schedule is all lost? No way! This list was in response to student questions at the time about how I might suggest they plan their work.)</p>
+<h3 id="suggested-task-list-as-posted-mar-25">Suggested task list as
+posted Mar 25</h3>
+<p><em>Edited lightly, see the original <a
+href="https://q.utoronto.ca/courses/253305/discussion_topics/1686233">here</a>.</em></p>
+<p>(If you’re not quite on this schedule is all lost? No way! This list
+was in response to student questions at the time about how I might
+suggest they plan their work.)</p>
 <ul>
 <li><p><strong>Between now and early next week:</strong></p>
 <ul>
-<li><p>Familiarizing yourself with the <a href="https://sta303-bolton.github.io/sta303-w22-final-project/">project information</a></p></li>
-<li><p>Acquiring the <strong>additional data</strong> you have been instructed to.</p></li>
-<li><p><strong>Cleaning</strong> and <strong>merging</strong> data.</p></li>
+<li><p>Familiarizing yourself with the <a
+href="https://sta303-bolton.github.io/sta303-w22-final-project/">project
+information</a></p></li>
+<li><p>Acquiring the <strong>additional data</strong> you have been
+instructed to.</p></li>
+<li><p><strong>Cleaning</strong> and <strong>merging</strong>
+data.</p></li>
 <li><p>Refining <strong>research questions</strong>.</p></li>
-<li><p>Could start preparing the <strong>appendix</strong> about acquiring the external data.</p></li>
+<li><p>Could start preparing the <strong>appendix</strong> about
+acquiring the external data.</p></li>
 </ul></li>
 <li><p><strong>Bulk of next week:</strong></p>
 <ul>
-<li><p>Finishing up <strong>data prep</strong> as informed by working on data <strong>summaries</strong>, <strong>visualizations</strong>, <strong>models</strong> and <strong>model assumption checking</strong> (and doing these things).</p></li>
-<li><p>Keeping notes on <strong>decisions</strong> and <strong>limitations</strong>.</p></li>
-<li><p>Beginning to write up your <strong>methods</strong> sections and prepare <strong>tables</strong>/<strong>visualizations</strong>.</p></li>
+<li><p>Finishing up <strong>data prep</strong> as informed by working on
+data <strong>summaries</strong>, <strong>visualizations</strong>,
+<strong>models</strong> and <strong>model assumption checking</strong>
+(and doing these things).</p></li>
+<li><p>Keeping notes on <strong>decisions</strong> and
+<strong>limitations</strong>.</p></li>
+<li><p>Beginning to write up your <strong>methods</strong> sections and
+prepare
+<strong>tables</strong>/<strong>visualizations</strong>.</p></li>
 </ul></li>
 <li><p><strong>Last week of term:</strong></p>
 <ul>
 <li><p>Finishing any final parts of your analyses.</p></li>
-<li><p>Writing up <strong>methods</strong>, <strong>results</strong>, <strong>discussion</strong> (+ <strong>strengths</strong> and <strong>limitations</strong>), <strong>introduction</strong> and <strong>executive summary</strong> (likely in that order).</p></li>
-<li><p>Making sure <strong>references</strong> are set up well and are complete and that any text/ideas from other sources is quoted or paraphrased appropriately and cited.</p></li>
-<li><p>Submitting your final project on MarkUs by 3:03 p.m. ET on April 7 for a +2% pt bonus on your final project mark <strong>OR</strong> submit by April 11 (3:03 p.m., of course).</p></li>
+<li><p>Writing up <strong>methods</strong>, <strong>results</strong>,
+<strong>discussion</strong> (+ <strong>strengths</strong> and
+<strong>limitations</strong>), <strong>introduction</strong> and
+<strong>executive summary</strong> (likely in that order).</p></li>
+<li><p>Making sure <strong>references</strong> are set up well and are
+complete and that any text/ideas from other sources is quoted or
+paraphrased appropriately and cited.</p></li>
+<li><p>Submitting your final project on MarkUs by 3:03 p.m. ET on April
+7 for a +2% pt bonus on your final project mark <strong>OR</strong>
+submit by April 11 (3:03 p.m., of course).</p></li>
 </ul></li>
 </ul>
 <h2 id="step-6-submit">Step 6: Submit</h2>
 <ul>
-<li><p>Submit all relevant files to reproduce your report. Note that is includes and image files that are not directly created by R. The data provided will already be present, but any new datasets you create will need to be uploaded.</p></li>
-<li><p>Exception: Do NOT upload the post code conversion file or large version of the census API data. You should create appropriately sized datasets for this project from them and save and upload these.</p>
+<li><p>Submit all relevant files to reproduce your report. Note that is
+includes and image files that are not directly created by R. The data
+provided will already be present, but any new datasets you create will
+need to be uploaded.</p></li>
+<li><p>Exception: Do NOT upload the post code conversion file or large
+version of the census API data. You should create appropriately sized
+datasets for this project from them and save and upload these.</p>
 <ul>
-<li>You will document and explain the process by which you got and wangled these datasets, so that someone else could follow your process themselves, BUT you will ensure the licensed data is not actually provided.</li>
+<li>You will document and explain the process by which you got and
+wangled these datasets, so that someone else could follow your process
+themselves, BUT you will ensure the licensed data is not actually
+provided.</li>
 </ul></li>
-<li><p>Why? This means that you can share (most of) this data and project in your own online portfolios, etc., but be very clear about what is and isn’t appropriate to share publicly.</p></li>
+<li><p>Why? This means that you can share (most of) this data and
+project in your own online portfolios, etc., but be very clear about
+what is and isn’t appropriate to share publicly.</p></li>
 </ul>
-<h2 id="notes-about-bonus-and-submission-dropboxes">Notes about bonus and submission dropboxes</h2>
-<p>Due to the two deadlines, there will be two dropboxes on MarkUs for this assessment. To avoid confusion, the dropbox for the 2% bonus early submission will be open until the deadline on April 7. After that, the dropbox for the normal submission will be open from April 7 to 11 only for groups that <yellow>did not submit in the early round.</yellow></p>
-<h3 id="warning-about-the-early-dropbox">Warning about the early dropbox</h3>
-<p>Only submit your FINISHED project to the early dropbbox. <strong>If you’re not sure if you’ll get it done by the deadline for the bonus, this is the one time I’ll tell you NOT to do a safety submit.</strong> To ensure clarity for the grading team, anything submitted to the early dropbox WILL be considered your final submission.</p>
+<h2 id="notes-about-bonus-and-submission-dropboxes">Notes about bonus
+and submission dropboxes</h2>
+<p>Due to the two deadlines, there will be two dropboxes on MarkUs for
+this assessment. To avoid confusion, the dropbox for the 2% bonus early
+submission will be open until the deadline on April 7. After that, the
+dropbox for the normal submission will be open from April 7 to 11 only
+for groups that <yellow>did not submit in the early round.</yellow></p>
+<h3 id="warning-about-the-early-dropbox">Warning about the early
+dropbox</h3>
+<p>Only submit your FINISHED project to the early dropbbox. <strong>If
+you’re not sure if you’ll get it done by the deadline for the bonus,
+this is the one time I’ll tell you NOT to do a safety submit.</strong>
+To ensure clarity for the grading team, anything submitted to the early
+dropbox WILL be considered your final submission.</p>
 <p>Not sure about what this means? PLEASE ASK.</p>
 <h1 id="credits">Credits</h1>
-<p>Thank you to <a href="https://www.statistics.utoronto.ca/people/directories/graduate-students/sonia-markes">Sonia Markes</a> for contributing to the background research and planning for this project.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Thank you to <a
+href="https://www.statistics.utoronto.ca/people/directories/graduate-students/sonia-markes">Sonia
+Markes</a> for contributing to the background research and planning for
+this project.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2479,7 +2630,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">
-<p>This site was made with the distill R package <i class="fab fa-r-project"></i>, powered by the distill web framework <i class="fab fa-js"></i></span>.</p>
+<p>This site was made with the distill R package
+<i class="fab fa-r-project"></i>, powered by the distill web framework
+<i class="fab fa-js"></i></span>.</p>
 </div>
 <!--/radix_placeholder_navigation_after_body-->
 

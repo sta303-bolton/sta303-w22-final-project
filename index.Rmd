@@ -13,8 +13,6 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-<yellow>*Last updated:* `r format(Sys.time(), '%Y-%m-%d %H:%S')`</yellow>
-
 Your final project for STA303/1002 is a consulting project for MINGAR. You will be analyzing data about their customers and creating a report appropriate for the Board of Directors.
 
 *Note: MINGAR isn't a real company, it would be massively reckless to provide 600 people with customer data with this level of detail. It would be very easy to identify individuals from data like this. That said, this dataset is based on real research and trends, and my own experiences running a small consulting company.*
@@ -119,7 +117,7 @@ Contractor ID = Your UTORid
 
 -   If you're working in a team, **each member of the team must sign their own version** and then ONE member will submit ALL the individual PDFS on behalf of the team.
 
-    -   Note, if you have trouble contacting a remember and getting their form, this may be a sign they won't be easy to work with on the project. Likewise, please don't be *that* team member that everyone complains about for not doing any work.
+    -   Note, if you have trouble contacting a member and getting their form, this may be a sign they won't be easy to work with on the project. Likewise, please don't be *that* team member that everyone complains about for not doing any work.
 
     -   If there are team dynamic issues, LET ME KNOW ASAP, I can help you work on a solution, or split up the team (that won't be penalized).
 

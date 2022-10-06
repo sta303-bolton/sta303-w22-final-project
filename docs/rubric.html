@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>STA303/1002 Winter 22 Final Project: Rubric</title>
@@ -1860,7 +1861,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2031,7 +2035,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.10.1/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2264,13 +2268,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#overview">Overview</a></li>
-<li><a href="#basic-checklist-5">Basic checklist (5%)</a></li>
-<li><a href="#executive-summary-35">Executive summary (35%)</a></li>
-<li><a href="#technical-report-50">Technical Report (50%)</a></li>
-<li><a href="#code-appendix-5">Code appendix (5%)</a></li>
-<li><a href="#ethics-statement-2">Ethics statement (2%)</a></li>
-<li><a href="#reproducibility-3">Reproducibility (3%)</a></li>
+<li><a href="#overview" id="toc-overview">Overview</a></li>
+<li><a href="#basic-checklist-5" id="toc-basic-checklist-5">Basic
+checklist (5%)</a></li>
+<li><a href="#executive-summary-35"
+id="toc-executive-summary-35">Executive summary (35%)</a></li>
+<li><a href="#technical-report-50"
+id="toc-technical-report-50">Technical Report (50%)</a></li>
+<li><a href="#code-appendix-5" id="toc-code-appendix-5">Code appendix
+(5%)</a></li>
+<li><a href="#ethics-statement-2" id="toc-ethics-statement-2">Ethics
+statement (2%)</a></li>
+<li><a href="#reproducibility-3"
+id="toc-reproducibility-3">Reproducibility (3%)</a></li>
 </ul>
 </nav>
 </div>
@@ -2278,7 +2288,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 </div>
 <h1 id="overview">Overview</h1>
-<p>You can download a PDF version of these tables <a href="https://github.com/sta303-bolton/sta303-w22-final-project/raw/master/pdfs/sta303_project_rubric.pdf">here</a>.</p>
+<p>You can download a PDF version of these tables <a
+href="https://github.com/sta303-bolton/sta303-w22-final-project/raw/master/pdfs/sta303_project_rubric.pdf">here</a>.</p>
 <table>
 <thead>
 <tr class="header">
@@ -2331,19 +2342,23 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <td> </td>
 </tr>
 <tr class="even">
-<td>Cover page exists as a separate first page AND is professional in appearance (can use provided template for full marks).</td>
+<td>Cover page exists as a separate first page AND is professional in
+appearance (can use provided template for full marks).</td>
 <td>1</td>
 </tr>
 <tr class="odd">
-<td>Title and subtitle together provide an informative introduction to the report.</td>
+<td>Title and subtitle together provide an informative introduction to
+the report.</td>
 <td>2</td>
 </tr>
 <tr class="even">
-<td>Clear from cover page <strong>for</strong> which company the report has been prepared.</td>
+<td>Clear from cover page <strong>for</strong> which company the report
+has been prepared.</td>
 <td>1</td>
 </tr>
 <tr class="odd">
-<td>Clear from cover page <strong>by</strong> which company the report has been prepared.</td>
+<td>Clear from cover page <strong>by</strong> which company the report
+has been prepared.</td>
 <td>1</td>
 </tr>
 <tr class="even">
@@ -2355,15 +2370,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <td> </td>
 </tr>
 <tr class="even">
-<td>Visualizations/tables have captions appropriately numbered and located (viz – bottom, table – top)</td>
+<td>Visualizations/tables have captions appropriately numbered and
+located (viz – bottom, table – top)</td>
 <td>2</td>
 </tr>
 <tr class="odd">
-<td>No code or raw code output (e.g., anything  fixed width font) is included.</td>
+<td>No code or raw code output (e.g., anything  fixed width font) is
+included.</td>
 <td>2</td>
 </tr>
 <tr class="even">
-<td>Variables/data are described in words, not using variable names (e.g., please no “the mean of promotion_var_1 is …”) in text, tables and visualizations.</td>
+<td>Variables/data are described in words, not using variable names
+(e.g., please no “the mean of promotion_var_1 is …”) in text, tables and
+visualizations.</td>
 <td>2</td>
 </tr>
 <tr class="odd">
@@ -2379,7 +2398,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <td> </td>
 </tr>
 <tr class="even">
-<td>Every team member has a short professional biography. It can be totally fictitious, it just needs to sound reasonable.</td>
+<td>Every team member has a short professional biography. It can be
+totally fictitious, it just needs to sound reasonable.</td>
 <td>2</td>
 </tr>
 <tr class="odd">
@@ -2387,7 +2407,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <td></td>
 </tr>
 <tr class="even">
-<td>Organized clearly and includes relevant data sources, packages and any external articles/resources. Appropriate in-text citations exist for each resource.</td>
+<td>Organized clearly and includes relevant data sources, packages and
+any external articles/resources. Appropriate in-text citations exist for
+each resource.</td>
 <td>2</td>
 </tr>
 <tr class="odd">
@@ -2403,7 +2425,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <td> </td>
 </tr>
 <tr class="even">
-<td>A PDF report, created from Knitting to PDF from R Markdown is submitted.</td>
+<td>A PDF report, created from Knitting to PDF from R Markdown is
+submitted.</td>
 <td>1</td>
 </tr>
 <tr class="odd">
@@ -2440,56 +2463,85 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <tr class="odd">
 <td><strong>Structure</strong></td>
 <td>No or limited use of headings. Structure is not easy to follow.</td>
-<td><p>Some organization under sections and headings but lacks some clarity.</p>
-<p>Executive summary is somewhat difficult to scan, lack  of emphasis on key information.</p></td>
+<td><p>Some organization under sections and headings but lacks some
+clarity.</p>
+<p>Executive summary is somewhat difficult to scan, lack  of emphasis on
+key information.</p></td>
 <td><p>Some use of headings but may lack clarity/organization.</p>
-<p>Executive summary is mostly easy to scan and key information is emphasised.</p></td>
+<p>Executive summary is mostly easy to scan and key information is
+emphasised.</p></td>
 <td><p>Clear and appropriate headings.</p>
-<p>Structure is logical and well organized. Executive summary is easy to scan and key information emphasised.</p></td>
+<p>Structure is logical and well organized. Executive summary is easy to
+scan and key information emphasised.</p></td>
 </tr>
 <tr class="even">
 <td><strong>Level of detail appropriate for audience</strong></td>
-<td>Overall, the level of detail is too high or too low for the intended audience.</td>
-<td>Level of detail is too low or too high for the intended audience in some sections</td>
+<td>Overall, the level of detail is too high or too low for the intended
+audience.</td>
+<td>Level of detail is too low or too high for the intended audience in
+some sections</td>
 <td>Level of detail is mostly appropriate for the intended audience</td>
 <td>Appropriate level of detail for the intended audience</td>
 </tr>
 <tr class="odd">
-<td><strong>Clarity and appropriateness: Visualizations and tables</strong></td>
+<td><strong>Clarity and appropriateness: Visualizations and
+tables</strong></td>
 <td>Tables / figures are inappropriate for the context.</td>
-<td><p>Some tables/figures included are not directly relevant to answering the research question(s), and do not effectively communicate the story of the results as they relate to the research question(s).</p>
-<p>Too many visualisations / tables included that are not directly relevant and/or should have been further curated.</p></td>
-<td><p>Tables and figures are relevant, but design could be improved to better communicate results as they relate to the research question.</p>
-<p>Choices of visualisations / tables may need to have been curated further.</p></td>
-<td><p>Tables and figures are relevant, well-constructed, and communicate the results clearly (in the context of the research questions).</p>
-<p>They are appropriately chosen for the audience of the executive summary. With only the most important and interesting visualisations and tables included.</p>
+<td><p>Some tables/figures included are not directly relevant to
+answering the research question(s), and do not effectively communicate
+the story of the results as they relate to the research question(s).</p>
+<p>Too many visualisations / tables included that are not directly
+relevant and/or should have been further curated.</p></td>
+<td><p>Tables and figures are relevant, but design could be improved to
+better communicate results as they relate to the research question.</p>
+<p>Choices of visualisations / tables may need to have been curated
+further.</p></td>
+<td><p>Tables and figures are relevant, well-constructed, and
+communicate the results clearly (in the context of the research
+questions).</p>
+<p>They are appropriately chosen for the audience of the executive
+summary. With only the most important and interesting visualisations and
+tables included.</p>
 <p>Use of colour is appropriate and consistent.</p>
 <p> </p></td>
 </tr>
 <tr class="even">
 <td><strong>Clarity and appropriateness: Written comments</strong></td>
-<td>Results are reported with insufficient information and context AND/OR too much jargon for audience. Too many unimportant or irrelevant results included.</td>
-<td><p>Results are reported but with insufficient information for some important results AND/OR not interpreted in context.</p>
+<td>Results are reported with insufficient information and context
+AND/OR too much jargon for audience. Too many unimportant or irrelevant
+results included.</td>
+<td><p>Results are reported but with insufficient information for some
+important results AND/OR not interpreted in context.</p>
 <p>Reported results are not connected to the research questions.</p>
 <p>Language used is inappropriate for the audience.</p>
 <p>Some unimportant or irrelevant results included.</p></td>
-<td><p>Size, direction and confidence (as appropriate) of most significant results are given.</p>
+<td><p>Size, direction and confidence (as appropriate) of most
+significant results are given.</p>
 <p>Context is stated for most results.</p>
 <p>Relevance to the research questions mostly appropriate.</p></td>
-<td><p>Size and direction of significant results are given in the context of the research questions.</p>
-<p>Reported results are clearly related to the research questions. No unimportant or irrelevant results included.</p></td>
+<td><p>Size and direction of significant results are given in the
+context of the research questions.</p>
+<p>Reported results are clearly related to the research questions. No
+unimportant or irrelevant results included.</p></td>
 </tr>
 <tr class="odd">
 <td><strong>Writing mechanics</strong></td>
-<td><p>Considerable writing and grammatical issues that obscure the meaning AND/OR lots of slang and inappropriate word choice.</p>
+<td><p>Considerable writing and grammatical issues that obscure the
+meaning AND/OR lots of slang and inappropriate word choice.</p>
 <p>No bullet points used.</p></td>
-<td><p>Multiple difficulties in understanding due to word choice, grammar and or sentence construction, but is overall otherwise understandable.</p>
+<td><p>Multiple difficulties in understanding due to word choice,
+grammar and or sentence construction, but is overall otherwise
+understandable.</p>
 <p>Paragraphing / bullet points not well done.</p></td>
-<td><p>Slight difficulty in understanding one or two sections but overall easy to understand.</p>
-<p>Mostly appropriate use of bullet points and paragraphing. Writing is in full sentences.</p>
+<td><p>Slight difficulty in understanding one or two sections but
+overall easy to understand.</p>
+<p>Mostly appropriate use of bullet points and paragraphing. Writing is
+in full sentences.</p>
 <p> </p></td>
-<td><p>Executive summary can be read and followed with minimal effort.</p>
-<p>Some grammatical or word choice errors are allowable but must not obstruct meaning.</p>
+<td><p>Executive summary can be read and followed with minimal
+effort.</p>
+<p>Some grammatical or word choice errors are allowable but must not
+obstruct meaning.</p>
 <p>Writing is in full sentences.</p>
 <p>Makes appropriate use of bullet points and paragraphing.</p></td>
 </tr>
@@ -2518,16 +2570,24 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <td><strong>Intro: Background</strong></td>
 <td>No introduction.</td>
 <td>Limited introduction to the report.</td>
-<td>A reasonable introduction is provided, though may lack some clarity.</td>
-<td>A succinct introduction to the report is provided that sets the scene for the rest of the report.</td>
+<td>A reasonable introduction is provided, though may lack some
+clarity.</td>
+<td>A succinct introduction to the report is provided that sets the
+scene for the rest of the report.</td>
 </tr>
 <tr class="even">
 <td><strong>Intro: Research questions</strong></td>
-<td><p>Research questions are not present or insufficiently address the full scope of the client’s needs.</p>
+<td><p>Research questions are not present or insufficiently address the
+full scope of the client’s needs.</p>
 <p> </p></td>
-<td>Research questions are present, but only address some of the areas the client asked for AND/OR lack clarity of scope AND/OR cannot be addressed with the available data.</td>
-<td>Research questions mostly satisfy the criteria for excellence, but may not be distinct, or not fully address the client’s needs or are only have a mostly clear scope.</td>
-<td><p>Appropriate, distinct research questions have been developed that:</p>
+<td>Research questions are present, but only address some of the areas
+the client asked for AND/OR lack clarity of scope AND/OR cannot be
+addressed with the available data.</td>
+<td>Research questions mostly satisfy the criteria for excellence, but
+may not be distinct, or not fully address the client’s needs or are only
+have a mostly clear scope.</td>
+<td><p>Appropriate, distinct research questions have been developed
+that:</p>
 <p>-        fully address the client’s needs,</p>
 <p>-        have a clear and specific scope,</p>
 <p>-        are able to be addressed with the available data.</p></td>
@@ -2536,34 +2596,52 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <td><strong>Methods: Data description and wrangling</strong></td>
 <td><p>Data not adequately described.</p>
 <p>No evidence of meaningful data wrangling.</p></td>
-<td>Basic description of the data and basic data wrangling choices. Lacking completeness and/or justification.</td>
-<td>Reasonable descriptions of data and appropriate data wrangling choices. Justifications are present, though may lack some clarity or completeness.</td>
-<td><p>Data is described sufficiently to provide context for the chosen methods.</p>
-<p>Data wrangling choices are explained clearly, are appropriate for preparing this data, and are well-justified.</p>
-<p><em>This can be as a separate section or discussed as appropriate within a methods section.</em></p></td>
+<td>Basic description of the data and basic data wrangling choices.
+Lacking completeness and/or justification.</td>
+<td>Reasonable descriptions of data and appropriate data wrangling
+choices. Justifications are present, though may lack some clarity or
+completeness.</td>
+<td><p>Data is described sufficiently to provide context for the chosen
+methods.</p>
+<p>Data wrangling choices are explained clearly, are appropriate for
+preparing this data, and are well-justified.</p>
+<p><em>This can be as a separate section or discussed as appropriate
+within a methods section.</em></p></td>
 </tr>
 <tr class="even">
 <td><strong>Methods: Purpose</strong></td>
 <td>No justification of choice of statistical methods.</td>
-<td>Limited explanation of purpose for chosen statistical methods. Justification of choice not persuasive.</td>
-<td>Purpose of statistical methods is stated, but some points of confusion remain, lack of clarity of description.</td>
+<td>Limited explanation of purpose for chosen statistical methods.
+Justification of choice not persuasive.</td>
+<td>Purpose of statistical methods is stated, but some points of
+confusion remain, lack of clarity of description.</td>
 <td>Purpose of each statistical method is clearly explained.</td>
 </tr>
 <tr class="odd">
 <td><strong>Methods: Appropriateness</strong></td>
 <td>Serious issues with methods chosen.</td>
-<td>Some methods are appropriate, but others are not appropriate for given research questions and data.</td>
-<td><p>Methods are mostly appropriately chosen to address the research questions with this data.</p>
-<p>Appropriateness is discussed in terms of model assumptions and context/structure of the data.</p></td>
-<td><p>Methods are appropriately chosen to address the research questions with this data. <em>Only methods learned in STA303 (with relevant knowledge from STA302 and hypothesis testing from earlier courses as relevant) are expected.</em></p>
-<p>Appropriateness is discussed in terms of model assumptions and the context/structure of the data.</p></td>
+<td>Some methods are appropriate, but others are not appropriate for
+given research questions and data.</td>
+<td><p>Methods are mostly appropriately chosen to address the research
+questions with this data.</p>
+<p>Appropriateness is discussed in terms of model assumptions and
+context/structure of the data.</p></td>
+<td><p>Methods are appropriately chosen to address the research
+questions with this data. <em>Only methods learned in STA303 (with
+relevant knowledge from STA302 and hypothesis testing from earlier
+courses as relevant) are expected.</em></p>
+<p>Appropriateness is discussed in terms of model assumptions and the
+context/structure of the data.</p></td>
 </tr>
 <tr class="even">
 <td><strong>Methods: Accuracy of description</strong></td>
 <td>Statistical methods are not described accurately.</td>
-<td>Description of statistical methods is mostly accurate, but the level of detail is too basic or too technical.</td>
-<td>Description of statistical methods is accurate, although some points would be confusing to the intended audience.</td>
-<td>Statistical methods are described clearly and accurately with the appropriate level of detail.</td>
+<td>Description of statistical methods is mostly accurate, but the level
+of detail is too basic or too technical.</td>
+<td>Description of statistical methods is accurate, although some points
+would be confusing to the intended audience.</td>
+<td>Statistical methods are described clearly and accurately with the
+appropriate level of detail.</td>
 </tr>
 </tbody>
 </table>
@@ -2580,43 +2658,65 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <td><p><strong>Results: Clarity and appropriateness of</strong></p>
 <p><strong>tables and figures</strong></p></td>
 <td>Tables / figures are inappropriate for the context.</td>
-<td>Some tables/figures included are not directly relevant to answering the research question(s), and do not effectively communicate the story of the results as they relate to the research question(s)</td>
-<td><p>Tables and figures are relevant, but design could be improved to better communicate results as they relate to the research question(s).</p>
+<td>Some tables/figures included are not directly relevant to answering
+the research question(s), and do not effectively communicate the story
+of the results as they relate to the research question(s)</td>
+<td><p>Tables and figures are relevant, but design could be improved to
+better communicate results as they relate to the research
+question(s).</p>
 <p>Use of colour is mostly appropriate and consistent.</p></td>
-<td><p>Tables and figures are relevant, well-constructed, and communicate the results clearly (in the context of the research questions).</p>
+<td><p>Tables and figures are relevant, well-constructed, and
+communicate the results clearly (in the context of the research
+questions).</p>
 <p>Use of colour is appropriate and consistent.</p></td>
 </tr>
 <tr class="even">
-<td><strong>Results: Clarity and appropriateness of written comments</strong></td>
+<td><strong>Results: Clarity and appropriateness of written
+comments</strong></td>
 <td>Results are reported with insufficient information and context.</td>
-<td><p>Results are reported but with insufficient information for some important results AND/OR not interpreted in context.</p>
-<p>Reported results are not connected to the research questions.</p></td>
-<td><p>Size, direction and confidence (as appropriate) of most significant results are given.</p>
+<td><p>Results are reported but with insufficient information for some
+important results AND/OR not interpreted in context.</p>
+<p>Reported results are not connected to the research
+questions.</p></td>
+<td><p>Size, direction and confidence (as appropriate) of most
+significant results are given.</p>
 <p>Context is stated for most results.</p>
 <p>Mostly relevant to the research questions.</p></td>
-<td><p>Size, direction and confidence (as appropriate) of significant results are given in the context of the research questions.</p>
-<p>Reported results are clearly related to the research questions.</p></td>
+<td><p>Size, direction and confidence (as appropriate) of significant
+results are given in the context of the research questions.</p>
+<p>Reported results are clearly related to the research
+questions.</p></td>
 </tr>
 <tr class="odd">
 <td><strong>Results: Accuracy</strong></td>
-<td>There are serious errors in the accuracy and interpretation of results.</td>
-<td>There are several errors in the interpretation of statistical tools/measures.</td>
-<td>P-values, confidence intervals and any other statistical tools/measures are mostly accurately communicated.</td>
-<td>P-values, confidence intervals and any other statistical tools/measures are accurately communicated.</td>
+<td>There are serious errors in the accuracy and interpretation of
+results.</td>
+<td>There are several errors in the interpretation of statistical
+tools/measures.</td>
+<td>P-values, confidence intervals and any other statistical
+tools/measures are mostly accurately communicated.</td>
+<td>P-values, confidence intervals and any other statistical
+tools/measures are accurately communicated.</td>
 </tr>
 <tr class="even">
 <td><strong>Results: Research questions are answered</strong></td>
 <td>Questions unanswered or inadequately supported by results.</td>
-<td>Basic answers to research question(s), may be incomplete and/or not adequately supported by results.</td>
-<td>Most of the research questions are answered and supported by results of data exploration and statistical analyses.</td>
-<td>Research question(s) clearly answered and supported by results of data exploration  statistical analyses.</td>
+<td>Basic answers to research question(s), may be incomplete and/or not
+adequately supported by results.</td>
+<td>Most of the research questions are answered and supported by results
+of data exploration and statistical analyses.</td>
+<td>Research question(s) clearly answered and supported by results of
+data exploration  statistical analyses.</td>
 </tr>
 <tr class="odd">
 <td><strong>Conclusion/ discussion</strong></td>
-<td>Results of data exploration and statistical analyses are not summarized.</td>
+<td>Results of data exploration and statistical analyses are not
+summarized.</td>
 <td>Basic summary results, but not complete.</td>
-<td>Results of data exploration and statistical analyses are summarized, although some points are not clear.</td>
-<td>Results of data exploration and statistical analyses are well summarized with an appropriate level of detail.</td>
+<td>Results of data exploration and statistical analyses are summarized,
+although some points are not clear.</td>
+<td>Results of data exploration and statistical analyses are well
+summarized with an appropriate level of detail.</td>
 </tr>
 <tr class="even">
 <td><strong>Limitations/ concerns</strong></td>
@@ -2624,54 +2724,83 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>No suggestions for future consideration.</p></td>
 <td><p>Limited discussion of limitations.</p>
 <p>Limited suggestions for future considerations.</p></td>
-<td><p>Good discussion of limitations and/or concerns related to the data and/or methods.</p>
+<td><p>Good discussion of limitations and/or concerns related to the
+data and/or methods.</p>
 <p>Description of suggestions for future consideration.</p></td>
-<td><p>Limitations and/or concerns related to the data and/or methods are thoughtfully and clearly described.</p>
-<p>Suggestions for future consideration sensible and clearly stated.</p></td>
+<td><p>Limitations and/or concerns related to the data and/or methods
+are thoughtfully and clearly described.</p>
+<p>Suggestions for future consideration sensible and clearly
+stated.</p></td>
 </tr>
 <tr class="odd">
 <td><strong>Professionalism</strong></td>
-<td>Inappropriate language/tone used. Client’s needs/context not addressed.</td>
-<td>Issues with appropriateness and/or consideration of client and/or professionalism of the tone.</td>
-<td><p>Demographic/identity variables are <em>mostly</em> handled with / communicated about with appropriate professionalism.</p>
-<p>Findings are <em>mostly</em> delivered truthfully and with awareness of client’s needs/context.  Report has <em>mostly</em> appropriate tone.</p></td>
-<td><p>Demographic/identity variables are handled with / communicated about with appropriate professionalism.</p>
-<p>Findings are delivered truthfully and with awareness of client’s needs/context.  </p>
+<td>Inappropriate language/tone used. Client’s needs/context not
+addressed.</td>
+<td>Issues with appropriateness and/or consideration of client and/or
+professionalism of the tone.</td>
+<td><p>Demographic/identity variables are <em>mostly</em> handled with /
+communicated about with appropriate professionalism.</p>
+<p>Findings are <em>mostly</em> delivered truthfully and with awareness
+of client’s needs/context.  Report has <em>mostly</em> appropriate
+tone.</p></td>
+<td><p>Demographic/identity variables are handled with / communicated
+about with appropriate professionalism.</p>
+<p>Findings are delivered truthfully and with awareness of client’s
+needs/context.  </p>
 <p>Report has appropriate tone.</p></td>
 </tr>
 <tr class="even">
 <td><strong>Organization</strong></td>
 <td>Order of ideas is very difficult to follow.</td>
 <td>Order of ideas is somewhat difficult to follow.</td>
-<td>Order of ideas is logical, although some parts could be organized more effectively to improve flow.</td>
-<td>Ideas presented in a very logical order, which is easy to follow.</td>
+<td>Order of ideas is logical, although some parts could be organized
+more effectively to improve flow.</td>
+<td>Ideas presented in a very logical order, which is easy to
+follow.</td>
 </tr>
 <tr class="odd">
 <td><strong>Sectioning and completeness</strong></td>
 <td>Sectioning not present AND/OR multiple sections missing.</td>
-<td>Report is missing at least one section OR no section headings are used.</td>
-<td>Report is sectioned mostly appropriately but could be section titles could have been better labelled/ordered more appropriately. Report is complete.</td>
-<td><p>Report includes clearly and appropriately labelled sections that are well organized. </p>
-<p>A complete report  should have sections that introduce the report, explain methods, present results, and discuss conclusions, limitations and next steps as appropriate.</p></td>
+<td>Report is missing at least one section OR no section headings are
+used.</td>
+<td>Report is sectioned mostly appropriately but could be section titles
+could have been better labelled/ordered more appropriately. Report is
+complete.</td>
+<td><p>Report includes clearly and appropriately labelled sections that
+are well organized. </p>
+<p>A complete report  should have sections that introduce the report,
+explain methods, present results, and discuss conclusions, limitations
+and next steps as appropriate.</p></td>
 </tr>
 <tr class="even">
 <td><strong>Level of detail for audience</strong></td>
-<td>Overall, the level of detail is too high or too low for the intended audience.</td>
-<td>Level of detail is too low or too high for the intended audience in some sections.</td>
-<td>Level of detail is mostly appropriate for the intended audience.</td>
-<td>Appropriate level of detail for an audience with statistical knowledge, though not necessarily R users.</td>
+<td>Overall, the level of detail is too high or too low for the intended
+audience.</td>
+<td>Level of detail is too low or too high for the intended audience in
+some sections.</td>
+<td>Level of detail is mostly appropriate for the intended
+audience.</td>
+<td>Appropriate level of detail for an audience with statistical
+knowledge, though not necessarily R users.</td>
 </tr>
 <tr class="odd">
 <td><strong>Writing mechanics</strong></td>
-<td><p>Considerable writing and grammatical issues that obscure the meaning AND/OR lots of slang and inappropriate word choice.</p>
+<td><p>Considerable writing and grammatical issues that obscure the
+meaning AND/OR lots of slang and inappropriate word choice.</p>
 <p>No bullet points used.</p></td>
-<td><p>Multiple difficulties in understanding due to word choice, grammar and or sentence construction, but is overall otherwise understandable.</p>
+<td><p>Multiple difficulties in understanding due to word choice,
+grammar and or sentence construction, but is overall otherwise
+understandable.</p>
 <p>Paragraphing / bullet points not well done.</p></td>
-<td><p>Slight difficulty in understanding one or two sections but overall easy to understand.</p>
-<p>Mostly appropriate use of bullet points and paragraphing. Writing is in full sentences.</p>
+<td><p>Slight difficulty in understanding one or two sections but
+overall easy to understand.</p>
+<p>Mostly appropriate use of bullet points and paragraphing. Writing is
+in full sentences.</p>
 <p> </p></td>
-<td><p>Technical report can be read and followed with minimal effort.</p>
-<p>Some grammatical or word choice errors are allowable but must not obstruct meaning.</p>
+<td><p>Technical report can be read and followed with minimal
+effort.</p>
+<p>Some grammatical or word choice errors are allowable but must not
+obstruct meaning.</p>
 <p>Writing is in full sentences.</p>
 <p>Makes appropriate use of bullet points and paragraphing.</p></td>
 </tr>
@@ -2700,11 +2829,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <tr class="odd">
 <td><strong>Code appendix</strong></td>
 <td>Incomplete or inappropriate.</td>
-<td>Web scraping, API access and accessing the licensed postcode conversion are all discussed with limited clarity/completeness OR one of the topics is missing or has significant errors but the other two are at proficient level.</td>
-<td><p>Web scraping, API access and accessing the licensed postcode conversion data are described mostly clearly and correctly in writing (minor mistakes/omissions) AND ethical professional practice considerations are highlighted in each case.</p>
+<td>Web scraping, API access and accessing the licensed postcode
+conversion are all discussed with limited clarity/completeness OR one of
+the topics is missing or has significant errors but the other two are at
+proficient level.</td>
+<td><p>Web scraping, API access and accessing the licensed postcode
+conversion data are described mostly clearly and correctly in writing
+(minor mistakes/omissions) AND ethical professional practice
+considerations are highlighted in each case.</p>
 <p> </p>
 <p>Appropriate code is included and commented clearly.</p></td>
-<td><p>Web scraping, API access and accessing the licensed postcode conversion data are described clearly and correctly in writing AND ethical professional practice considerations are discussed, demonstrating clear understanding, in each case.</p>
+<td><p>Web scraping, API access and accessing the licensed postcode
+conversion data are described clearly and correctly in writing AND
+ethical professional practice considerations are discussed,
+demonstrating clear understanding, in each case.</p>
 <p> </p>
 <p>Appropriate code is included and commented clearly.</p></td>
 </tr>
@@ -2734,10 +2872,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <td><strong>Ethics statement</strong></td>
 <td><p>Incomplete or inappropriate.</p>
 <p> </p>
-<p><em>(Be very careful about your academic integrity. Don’t plagiarize an ethics statement…)</em></p></td>
-<td>Two sensible statements were made but they lack clarity, appropriateness or appropriately professional language.</td>
-<td>Only two statements about ethical statistical consulting are at the outstanding level OR there are three proficient statements but they lack clarity or appropriateness or professional language.</td>
-<td>At least three relevant statements about ethical statistical consulting are made. These are appropriately in line with professional conduct advice and are clearly stated and use professional language.</td>
+<p><em>(Be very careful about your academic integrity. Don’t plagiarize
+an ethics statement…)</em></p></td>
+<td>Two sensible statements were made but they lack clarity,
+appropriateness or appropriately professional language.</td>
+<td>Only two statements about ethical statistical consulting are at the
+outstanding level OR there are three proficient statements but they lack
+clarity or appropriateness or professional language.</td>
+<td>At least three relevant statements about ethical statistical
+consulting are made. These are appropriately in line with professional
+conduct advice and are clearly stated and use professional
+language.</td>
 </tr>
 </tbody>
 </table>
@@ -2763,17 +2908,23 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <tbody>
 <tr class="odd">
 <td><strong>Reproducibility</strong></td>
-<td>Unable to reproduce PDF from Rmd even with significant revisions OR .Rmd not submitted.</td>
-<td>Several revisions required to reproduce PDF from Rmd. This may be caused by not including  external images or all data manipulation code.</td>
+<td>Unable to reproduce PDF from Rmd even with significant revisions OR
+.Rmd not submitted.</td>
+<td>Several revisions required to reproduce PDF from Rmd. This may be
+caused by not including  external images or all data manipulation
+code.</td>
 <td>Only minor revisions are required to recreate PDF from Rmd.</td>
-<td><p>No revisions required to run code to produce final PDF report.</p>
+<td><p>No revisions required to run code to produce final PDF
+report.</p>
 <p> </p>
-<p>(<em>This doesn’t include installing libraries, but all libraries used should be clearly introduced in the code.</em>)</p></td>
+<p>(<em>This doesn’t include installing libraries, but all libraries
+used should be clearly introduced in the code.</em>)</p></td>
 </tr>
 </tbody>
 </table>
 <p> </p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2789,7 +2940,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">
-<p>This site was made with the distill R package <i class="fab fa-r-project"></i>, powered by the distill web framework <i class="fab fa-js"></i></span>.</p>
+<p>This site was made with the distill R package
+<i class="fab fa-r-project"></i>, powered by the distill web framework
+<i class="fab fa-js"></i></span>.</p>
 </div>
 <!--/radix_placeholder_navigation_after_body-->
 

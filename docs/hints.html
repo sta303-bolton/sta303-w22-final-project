@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>STA303/1002 Winter 22 Final Project: Data and hints</title>
@@ -1860,7 +1861,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2031,10 +2035,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.10.1/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/clipboard-2.0.6/clipboard.min.js"></script>
-  <link href="site_libs/xaringanExtra-clipboard-0.2.4/xaringanExtra-clipboard.css" rel="stylesheet" />
-  <script src="site_libs/xaringanExtra-clipboard-0.2.4/xaringanExtra-clipboard.js"></script>
+  <link href="site_libs/xaringanExtra-clipboard-0.2.6/xaringanExtra-clipboard.css" rel="stylesheet" />
+  <script src="site_libs/xaringanExtra-clipboard-0.2.6/xaringanExtra-clipboard.js"></script>
   <script>window.xaringanExtraClipboard(null, {"button":"<i class=\"fa fa-clone fa-2x\" style=\"color: #301e64\"><\/i>","success":"<i class=\"fa fa-check fa-2x\" style=\"color: #90BE6D\"><\/i>","error":"<i class=\"fa fa-times fa-2x\" style=\"color: #F94144\"><\/i>"})</script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
@@ -2270,26 +2274,40 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#jupyterhub-template">JupyterHub template</a></li>
-<li><a href="#guide-to-the-folders-and-files">Guide to the folders and files</a>
+<li><a href="#jupyterhub-template"
+id="toc-jupyterhub-template">JupyterHub template</a></li>
+<li><a href="#guide-to-the-folders-and-files"
+id="toc-guide-to-the-folders-and-files">Guide to the folders and
+files</a>
 <ul>
-<li><a href="#folders">Folders</a></li>
-<li><a href="#files">Files</a></li>
-<li><a href="#a-note-on-files-paths">A note on files paths</a></li>
+<li><a href="#folders" id="toc-folders">Folders</a></li>
+<li><a href="#files" id="toc-files">Files</a></li>
+<li><a href="#a-note-on-files-paths" id="toc-a-note-on-files-paths">A
+note on files paths</a></li>
 </ul></li>
-<li><a href="#guide-to-the-data">Guide to the data</a>
+<li><a href="#guide-to-the-data" id="toc-guide-to-the-data">Guide to the
+data</a>
 <ul>
-<li><a href="#guide-to-the-variables">Guide to the variables</a></li>
-<li><a href="#additional-hints">Additional hints</a></li>
+<li><a href="#guide-to-the-variables"
+id="toc-guide-to-the-variables">Guide to the variables</a></li>
+<li><a href="#additional-hints" id="toc-additional-hints">Additional
+hints</a></li>
 </ul></li>
-<li><a href="#web-scraping-a-website-with-one-simple-table">Web scraping a website with one simple table</a></li>
-<li><a href="#postal-code-conversion-file">Postal code conversion file</a>
+<li><a href="#web-scraping-a-website-with-one-simple-table"
+id="toc-web-scraping-a-website-with-one-simple-table">Web scraping a
+website with one simple table</a></li>
+<li><a href="#postal-code-conversion-file"
+id="toc-postal-code-conversion-file">Postal code conversion file</a>
 <ul>
-<li><a href="#uploading-the-data-to-the-jupyterhub">Uploading the data to the JupyterHub</a></li>
+<li><a href="#uploading-the-data-to-the-jupyterhub"
+id="toc-uploading-the-data-to-the-jupyterhub">Uploading the data to the
+JupyterHub</a></li>
 </ul></li>
-<li><a href="#getting-income-data-from-the-canadian-census">Getting income data from the Canadian census</a></li>
-<li><a href="#privacy">Privacy?</a></li>
-<li><a href="#other">Other</a></li>
+<li><a href="#getting-income-data-from-the-canadian-census"
+id="toc-getting-income-data-from-the-canadian-census">Getting income
+data from the Canadian census</a></li>
+<li><a href="#privacy" id="toc-privacy">Privacy?</a></li>
+<li><a href="#other" id="toc-other">Other</a></li>
 </ul>
 </nav>
 </div>
@@ -2300,27 +2318,54 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 </div>
 <h1 id="jupyterhub-template">JupyterHub template</h1>
-<p><a href="https://jupyter.utoronto.ca/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fsta303-bolton%2Fsta303-w22-final-project-template&amp;urlpath=rstudio%2F">Pull the data here!</a></p>
-<h1 id="guide-to-the-folders-and-files">Guide to the folders and files</h1>
-<p>This files is a Markdown based README file. It will be rendered on GitHub as a landing page of sorts to help someone understand this project. It is good practice to have a README file to help orient a viewer to your project.</p>
+<p><a
+href="https://jupyter.utoronto.ca/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fsta303-bolton%2Fsta303-w22-final-project-template&amp;urlpath=rstudio%2F">Pull
+the data here!</a></p>
+<h1 id="guide-to-the-folders-and-files">Guide to the folders and
+files</h1>
+<p>This files is a Markdown based README file. It will be rendered on
+GitHub as a landing page of sorts to help someone understand this
+project. It is good practice to have a README file to help orient a
+viewer to your project.</p>
 <h2 id="folders">Folders</h2>
 <ul>
-<li><p>The <code>data-raw</code> folder should have the raw data provided by the client, as well where the licensed data for the postcode conversion, the census data and your web scraping results should be saved. This file should NOT be made publicly available.</p></li>
-<li><p>The <code>data</code> folder should contain any datasets created in the <code>data-prep.Rmd</code> and used in <code>sta303-final-project.Rmd</code>.</p></li>
-<li><p>The <code>cache</code> folder will appear after you set up the Canadian census data. It doesn’t not need to be submitted as part of you assessment.</p></li>
+<li><p>The <code>data-raw</code> folder should have the raw data
+provided by the client, as well where the licensed data for the postcode
+conversion, the census data and your web scraping results should be
+saved. This file should NOT be made publicly available.</p></li>
+<li><p>The <code>data</code> folder should contain any datasets created
+in the <code>data-prep.Rmd</code> and used in
+<code>sta303-final-project.Rmd</code>.</p></li>
+<li><p>The <code>cache</code> folder will appear after you set up the
+Canadian census data. It doesn’t not need to be submitted as part of you
+assessment.</p></li>
 </ul>
 <h2 id="files">Files</h2>
 <ul>
-<li><p><code>README.MD</code> this file that you’re reading! It tells you about the contents and set up of this project.</p></li>
-<li><p><code>data-prep.Rmd</code> is where you should write the code for creating the datasets you will use in your main report. It should read in data from <code>raw-data</code> and the data sets you plan to use for the report into <code>data</code>. All other modelling, summaries, etc., should be done in the main Rmd.</p>
+<li><p><code>README.MD</code> this file that you’re reading! It tells
+you about the contents and set up of this project.</p></li>
+<li><p><code>data-prep.Rmd</code> is where you should write the code for
+creating the datasets you will use in your main report. It should read
+in data from <code>raw-data</code> and the data sets you plan to use for
+the report into <code>data</code>. All other modelling, summaries, etc.,
+should be done in the main Rmd.</p>
 <ul>
-<li>The purpose of this is to make sure that your main report is <strong>reproducible</strong> with the data you would be allowed to share publicly, should you choose to do so. I.e., you could upload your <code>data</code> folder and your <code>sta303-final-project.Rmd</code> to a public GitHub repo.</li>
+<li>The purpose of this is to make sure that your main report is
+<strong>reproducible</strong> with the data you would be allowed to
+share publicly, should you choose to do so. I.e., you could upload your
+<code>data</code> folder and your <code>sta303-final-project.Rmd</code>
+to a public GitHub repo.</li>
 </ul></li>
-<li><p><code>sta303-final-project.Rmd</code> is the file that should be updated to create your final report. It should only use data from the <code>data</code> folder.</p></li>
-<li><p><code>report.tex</code> is the LaTeX template that helps create the final report. You should not need to edit it.</p></li>
+<li><p><code>sta303-final-project.Rmd</code> is the file that should be
+updated to create your final report. It should only use data from the
+<code>data</code> folder.</p></li>
+<li><p><code>report.tex</code> is the LaTeX template that helps create
+the final report. You should not need to edit it.</p></li>
 </ul>
 <h2 id="a-note-on-files-paths">A note on files paths</h2>
-<p>All files paths should be <strong>relative</strong> to <code>sta303-final-project.Rmd</code> and of the form <code>data/filename</code> or <code>raw-data/filename</code>.</p>
+<p>All files paths should be <strong>relative</strong> to
+<code>sta303-final-project.Rmd</code> and of the form
+<code>data/filename</code> or <code>raw-data/filename</code>.</p>
 <h1 id="guide-to-the-data">Guide to the data</h1>
 <table>
 <caption>Table 1: Guide to client provided data</caption>
@@ -2344,17 +2389,23 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </tr>
 <tr class="even">
 <td><code>customer.Rds</code></td>
-<td><code>cust_id</code>, <code>dob</code>, <code>postcode</code>, <code>sex</code>, <code>pronouns</code>, <code>emoji_modifier</code></td>
-<td>General information we held about each customer for use in the app and associated profile and chat features.</td>
+<td><code>cust_id</code>, <code>dob</code>, <code>postcode</code>,
+<code>sex</code>, <code>pronouns</code>,
+<code>emoji_modifier</code></td>
+<td>General information we held about each customer for use in the app
+and associated profile and chat features.</td>
 </tr>
 <tr class="odd">
 <td><code>device.Rds</code></td>
-<td><code>dev_id</code>, <code>device_name</code>, <code>line</code>, <code>released</code></td>
-<td>Additional information about each device in these data. May be useful for connecting with the industry dataset.</td>
+<td><code>dev_id</code>, <code>device_name</code>, <code>line</code>,
+<code>released</code></td>
+<td>Additional information about each device in these data. May be
+useful for connecting with the industry dataset.</td>
 </tr>
 <tr class="even">
 <td><code>cust_sleep.Rds</code></td>
-<td><code>cust_id</code>, <code>date</code>, <code>duration</code>, <code>flags</code></td>
+<td><code>cust_id</code>, <code>date</code>, <code>duration</code>,
+<code>flags</code></td>
 <td>Sleep data for each customer.</td>
 </tr>
 </tbody>
@@ -2387,7 +2438,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </tr>
 <tr class="even">
 <td><code>sex</code></td>
-<td>Biological sex, used for calculations of health metrics, like body-mass index and base metabolic rate.</td>
+<td>Biological sex, used for calculations of health metrics, like
+body-mass index and base metabolic rate.</td>
 </tr>
 <tr class="odd">
 <td><code>pronouns</code></td>
@@ -2395,7 +2447,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </tr>
 <tr class="even">
 <td><code>emoji_modifier</code></td>
-<td>Code for skin tone modifier for emojis when using the chat and react features of the social component of our app. These are the standard <a href="https://unicode.org/emoji/charts/full-emoji-modifiers.html">unicode modifiers</a>, based on the Fitzpatrick scale. If not set, this means the default yellow colour used.</td>
+<td>Code for skin tone modifier for emojis when using the chat and react
+features of the social component of our app. These are the standard <a
+href="https://unicode.org/emoji/charts/full-emoji-modifiers.html">unicode
+modifiers</a>, based on the Fitzpatrick scale. If not set, this means
+the default yellow colour used.</td>
 </tr>
 <tr class="odd">
 <td><code>dev_id</code></td>
@@ -2411,11 +2467,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </tr>
 <tr class="even">
 <td><code>released</code></td>
-<td>Release date for this particular device type. Year, month, day format.</td>
+<td>Release date for this particular device type. Year, month, day
+format.</td>
 </tr>
 <tr class="odd">
 <td><code>date</code></td>
-<td>For sleep data, date sleep session started. Year, month, day format.</td>
+<td>For sleep data, date sleep session started. Year, month, day
+format.</td>
 </tr>
 <tr class="even">
 <td>duration</td>
@@ -2423,7 +2481,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </tr>
 <tr class="odd">
 <td>flags</td>
-<td>Number of times there was a quality flag during the sleep session. Flags may occur due to missing data, or due to data being recorded but sufficiently unusual to suggest it may be a sensor error or other data quality issue.</td>
+<td>Number of times there was a quality flag during the sleep session.
+Flags may occur due to missing data, or due to data being recorded but
+sufficiently unusual to suggest it may be a sensor error or other data
+quality issue.</td>
 </tr>
 </tbody>
 </table>
@@ -2445,25 +2506,40 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <tbody>
 <tr class="odd">
 <td>Web scraped device data</td>
-<td><code>Device name</code>, <code>Line</code>, <code>Recommended retail price</code>, <code>Battery life</code>, <code>Water resitance</code>, <code>Heart rate sensor</code>, <code>Pulse oximiter</code>, <code>GPS</code>, <code>Sleep tracking</code>, <code>Smart notifications</code>, <code>Contactless payments</code>, <code>Released</code>, <code>Brand</code></td>
-<td><p>Source: <a href="https://fitnesstrackerinfohub.netlify.app/" class="uri">https://fitnesstrackerinfohub.netlify.app/</a>.</p>
-<p>See <a href="https://sta303-bolton.github.io/sta303-w22-final-project/hints.html"><em>Data and hints</em></a>.</p></td>
+<td><code>Device name</code>, <code>Line</code>,
+<code>Recommended retail price</code>, <code>Battery life</code>,
+<code>Water resitance</code>, <code>Heart rate sensor</code>,
+<code>Pulse oximiter</code>, <code>GPS</code>,
+<code>Sleep tracking</code>, <code>Smart notifications</code>,
+<code>Contactless payments</code>, <code>Released</code>,
+<code>Brand</code></td>
+<td><p>Source: <a href="https://fitnesstrackerinfohub.netlify.app/"
+class="uri">https://fitnesstrackerinfohub.netlify.app/</a>.</p>
+<p>See <a
+href="https://sta303-bolton.github.io/sta303-w22-final-project/hints.html"><em>Data
+and hints</em></a>.</p></td>
 </tr>
 <tr class="even">
 <td>Median income data</td>
-<td><code>CSDuid</code>, <code>hhld_median_inc</code>, <code>Population</code></td>
+<td><code>CSDuid</code>, <code>hhld_median_inc</code>,
+<code>Population</code></td>
 <td><p>Procured through the Census Mapper API.</p>
-<p>See <a href="https://sta303-bolton.github.io/sta303-w22-final-project/hints.html"><em>Data and hints</em></a>.</p></td>
+<p>See <a
+href="https://sta303-bolton.github.io/sta303-w22-final-project/hints.html"><em>Data
+and hints</em></a>.</p></td>
 </tr>
 <tr class="odd">
 <td>Postcode conversion file</td>
 <td><code>PC</code>, <code>CSDuid</code></td>
 <td><p>Sourced through U of T Libraries.</p>
-<p>See <a href="https://sta303-bolton.github.io/sta303-w22-final-project/hints.html"><em>Data and hints</em></a>.</p></td>
+<p>See <a
+href="https://sta303-bolton.github.io/sta303-w22-final-project/hints.html"><em>Data
+and hints</em></a>.</p></td>
 </tr>
 </tbody>
 </table>
-<h1 id="web-scraping-a-website-with-one-simple-table">Web scraping a website with one simple table</h1>
+<h1 id="web-scraping-a-website-with-one-simple-table">Web scraping a
+website with one simple table</h1>
 <p>Here is some sample code, using the <code>rvest</code> package</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2489,45 +2565,64 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <span class='va'>html</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/polite/man/scrape.html'>scrape</a></span><span class='op'>(</span><span class='va'>target</span><span class='op'>)</span>
 
-<span class='va'>device_data</span> <span class='op'>&lt;-</span> <span class='va'>html</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'><a href='https://rvest.tidyverse.org/reference/html_element.html'>html_elements</a></span><span class='op'>(</span><span class='st'>"table"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'><a href='https://rvest.tidyverse.org/reference/html_table.html'>html_table</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>pluck</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span> <span class='co'># added, in case you're getting a list format</span>
+<span class='va'>device_data</span> <span class='op'>&lt;-</span> <span class='va'>html</span> <span class='op'><a href='https://rdrr.io/pkg/polite/man/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rvest.tidyverse.org/reference/html_element.html'>html_elements</a></span><span class='op'>(</span><span class='st'>"table"</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/polite/man/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rvest.tidyverse.org/reference/html_table.html'>html_table</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/polite/man/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://purrr.tidyverse.org/reference/pluck.html'>pluck</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span> <span class='co'># added, in case you're getting a list format</span>
 </code></pre>
 </div>
 </div>
 <h1 id="postal-code-conversion-file">Postal code conversion file</h1>
 <ul>
-<li><p>As a university of Toronto student you have access to a Census Canada <a href="https://mdl.library.utoronto.ca/collections/numeric-data/census-canada/postal-code-conversion-file">Postal Code Conversion Files</a></p></li>
+<li><p>As a university of Toronto student you have access to a Census
+Canada <a
+href="https://mdl.library.utoronto.ca/collections/numeric-data/census-canada/postal-code-conversion-file">Postal
+Code Conversion Files</a></p></li>
 <li><p>Ethical considerations</p>
 <ul>
-<li>You are asked to accept a license agreement to get access to this data.</li>
-<li>This is data that should NOT go directly on to your GitHub. Think carefully about how you will process this data, saving only the information you need for any data that is part of your final submission.</li>
+<li>You are asked to accept a license agreement to get access to this
+data.</li>
+<li>This is data that should NOT go directly on to your GitHub. Think
+carefully about how you will process this data, saving only the
+information you need for any data that is part of your final
+submission.</li>
 </ul></li>
-<li><p>I recommend downloading the .sav file version. It says it is for SPSS, but it is easy to read into R.</p></li>
-<li><p>Choose an appropriate year and make sure you specify/justify it in your write-up.</p></li>
+<li><p>I recommend downloading the .sav file version. It says it is for
+SPSS, but it is easy to read into R.</p></li>
+<li><p>Choose an appropriate year and make sure you specify/justify it
+in your write-up.</p></li>
 </ul>
-<h2 id="uploading-the-data-to-the-jupyterhub">Uploading the data to the JupyterHub</h2>
-<p><del><strong>You may need to compress the .sav file before uploading to ensure a smooth upload.</strong> It will automatically decompressed for you, upon upload.</del></p>
-<p>If you are using the JupyterHub, please use the <code>break_glass_in_case_of_emergency.Rds</code> in the <code>data-raw</code> folder. It is the result of the below code (i.e., it is <code>postcode</code>).</p>
+<h2 id="uploading-the-data-to-the-jupyterhub">Uploading the data to the
+JupyterHub</h2>
+<p><del><strong>You may need to compress the .sav file before uploading
+to ensure a smooth upload.</strong> It will automatically decompressed
+for you, upon upload.</del></p>
+<p>If you are using the JupyterHub, please use the
+<code>break_glass_in_case_of_emergency.Rds</code> in the
+<code>data-raw</code> folder. It is the result of the below code (i.e.,
+it is <code>postcode</code>).</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># install.packages("haven")</span>
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://haven.tidyverse.org'>haven</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://haven.tidyverse.org'>haven</a></span><span class='op'>)</span>
 <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
 <span class='va'>dataset</span> <span class='op'>=</span> <span class='fu'><a href='https://haven.tidyverse.org/reference/read_spss.html'>read_sav</a></span><span class='op'>(</span><span class='st'>"raw-data/pccfNat_fccpNat_082021sav.sav"</span><span class='op'>)</span>
 
-<span class='va'>postcode</span> <span class='op'>&lt;-</span> <span class='va'>dataset</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>select</span><span class='op'>(</span><span class='va'>PC</span>, <span class='va'>CSDuid</span><span class='op'>)</span>
+<span class='va'>postcode</span> <span class='op'>&lt;-</span> <span class='va'>dataset</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>PC</span>, <span class='va'>CSDuid</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
-<h1 id="getting-income-data-from-the-canadian-census">Getting income data from the Canadian census</h1>
+<h1 id="getting-income-data-from-the-canadian-census">Getting income
+data from the Canadian census</h1>
 <ul>
-<li>Sign up for the cancensus API through <a href="https://censusmapper.ca/" class="uri">https://censusmapper.ca/</a></li>
+<li>Sign up for the cancensus API through <a
+href="https://censusmapper.ca/"
+class="uri">https://censusmapper.ca/</a></li>
 <li>Get your API key and replace it below
 <ul>
-<li>You can access your key by clicking your profile picture and choosing ‘Edit profile’. It will be displayed on that page.</li>
+<li>You can access your key by clicking your profile picture and
+choosing ‘Edit profile’. It will be displayed on that page.</li>
 </ul></li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
@@ -2541,47 +2636,67 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <span class='co'># get all regions as at the 2016 Census (2020 not up yet)</span>
-<span class='va'>regions</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://mountainmath.github.io/cancensus/index.html/reference/list_census_regions.html'>list_census_regions</a></span><span class='op'>(</span>dataset <span class='op'>=</span> <span class='st'>"CA16"</span><span class='op'>)</span>
+<span class='va'>regions</span> <span class='op'>&lt;-</span> <span class='fu'>list_census_regions</span><span class='op'>(</span>dataset <span class='op'>=</span> <span class='st'>"CA16"</span><span class='op'>)</span>
 
-<span class='va'>regions_filtered</span> <span class='op'>&lt;-</span>  <span class='va'>regions</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>level</span> <span class='op'>==</span> <span class='st'>"CSD"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># Figure out what CSD means in Census data</span>
-  <span class='fu'><a href='https://mountainmath.github.io/cancensus/index.html/reference/as_census_region_list.html'>as_census_region_list</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>regions_filtered</span> <span class='op'>&lt;-</span>  <span class='va'>regions</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>level</span> <span class='op'>==</span> <span class='st'>"CSD"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># Figure out what CSD means in Census data</span>
+  <span class='fu'>as_census_region_list</span><span class='op'>(</span><span class='op'>)</span>
 
 <span class='co'># This can take a while</span>
 <span class='co'># We want to get household median income</span>
-<span class='va'>census_data_csd</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://mountainmath.github.io/cancensus/index.html/reference/get_census.html'>get_census</a></span><span class='op'>(</span>dataset<span class='op'>=</span><span class='st'>'CA16'</span>, regions <span class='op'>=</span> <span class='va'>regions_filtered</span>,
+<span class='va'>census_data_csd</span> <span class='op'>&lt;-</span> <span class='fu'>get_census</span><span class='op'>(</span>dataset<span class='op'>=</span><span class='st'>'CA16'</span>, regions <span class='op'>=</span> <span class='va'>regions_filtered</span>,
                           vectors<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"v_CA16_2397"</span><span class='op'>)</span>, 
                           level<span class='op'>=</span><span class='st'>'CSD'</span>, geo_format <span class='op'>=</span> <span class='st'>"sf"</span><span class='op'>)</span>
 
 <span class='co'># Simplify to only needed variables</span>
-<span class='va'>median_income</span> <span class='op'>&lt;-</span> <span class='va'>census_data_csd</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>as_tibble</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>select</span><span class='op'>(</span>CSDuid <span class='op'>=</span> <span class='va'>GeoUID</span>, <span class='fu'>contains</span><span class='op'>(</span><span class='st'>"median"</span><span class='op'>)</span>, <span class='va'>Population</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>mutate</span><span class='op'>(</span>CSDuid <span class='op'>=</span> <span class='fu'>parse_number</span><span class='op'>(</span><span class='va'>CSDuid</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>rename</span><span class='op'>(</span>hhld_median_inc <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span>
+<span class='va'>median_income</span> <span class='op'>&lt;-</span> <span class='va'>census_data_csd</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://tibble.tidyverse.org/reference/as_tibble.html'>as_tibble</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span>CSDuid <span class='op'>=</span> <span class='va'>GeoUID</span>, <span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>contains</a></span><span class='op'>(</span><span class='st'>"median"</span><span class='op'>)</span>, <span class='va'>Population</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>CSDuid <span class='op'>=</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/parse_number.html'>parse_number</a></span><span class='op'>(</span><span class='va'>CSDuid</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span>hhld_median_inc <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
 <h1 id="privacy">Privacy?</h1>
-<p>For this project, there are two distinct ways you should think about data protection and privacy:</p>
-<p><strong>1) As if you were really consultants working for a client. (Report world)</strong></p>
-<p>This will be what you consider in the writing of your report. What would a real consultant do for a real client?</p>
-<p><strong>2) As responsible students/statisticians at U of T. (GitHub/portfolio world)</strong></p>
-<p>This will be what you consider in sharing your report in the ‘real world’. To access the postcode data you need to agree to the license around it (make sure you do this, even if you need to use the <code>break-glass</code> in the end). This means this file should NOT be shared on your GitHub or as part of any portfolio of your work. ‘Keep it secret, keep it safe’.</p>
+<p>For this project, there are two distinct ways you should think about
+data protection and privacy:</p>
+<p><strong>1) As if you were really consultants working for a client.
+(Report world)</strong></p>
+<p>This will be what you consider in the writing of your report. What
+would a real consultant do for a real client?</p>
+<p><strong>2) As responsible students/statisticians at U of T.
+(GitHub/portfolio world)</strong></p>
+<p>This will be what you consider in sharing your report in the ‘real
+world’. To access the postcode data you need to agree to the license
+around it (make sure you do this, even if you need to use the
+<code>break-glass</code> in the end). This means this file should NOT be
+shared on your GitHub or as part of any portfolio of your work. ‘Keep it
+secret, keep it safe’.</p>
 <p>A useful distinction:</p>
 <ul>
-<li>Private/protected data in <code>data-raw</code> folder and this should NOT go on GitHub.<br />
+<li>Private/protected data in <code>data-raw</code> folder and this
+should NOT go on GitHub.<br />
 </li>
-<li>Publishable prepped data used directly in the report (as set up in <code>data-prep.Rmd</code>) in <code>data</code> folder and this could go on GitHub/your personal portfolio.</li>
+<li>Publishable prepped data used directly in the report (as set up in
+<code>data-prep.Rmd</code>) in <code>data</code> folder and this could
+go on GitHub/your personal portfolio.</li>
 </ul>
-<p>Note, you also shouldn’t include your API key anywhere as that is private information about your account.</p>
+<p>Note, you also shouldn’t include your API key anywhere as that is
+private information about your account.</p>
 <h1 id="other">Other</h1>
 <ul>
-<li>If you have convergence issues using <code>glmer</code>, consider changing the optimizer: <code>control=glmerControl(optimizer="bobyqa",  optCtrl=list(maxfun=2e5))</code>. (add this to you <code>glmer</code> cal)</li>
-<li>You may want to rescale age. <code>scales::rescale</code> is pretty handy for this. (Note: there may be other more appropriate ways yo consider age, depending on the research question.)</li>
-<li>You can fit equivalent models in <code>glmer</code> and <code>gam</code>, but sometimes <code>gam</code> fits them faster!</li>
+<li>If you have convergence issues using <code>glmer</code>, consider
+changing the optimizer:
+<code>control=glmerControl(optimizer="bobyqa",  optCtrl=list(maxfun=2e5))</code>.
+(add this to your <code>glmer</code> call)</li>
+<li>You may want to rescale age. <code>scales::rescale</code> is pretty
+handy for this. (Note: there may be other more appropriate ways to
+consider age, depending on the research question.)</li>
+<li>You can fit equivalent models in <code>glmer</code> and
+<code>gam</code>, but sometimes <code>gam</code> fits them faster!</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2597,7 +2712,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">
-<p>This site was made with the distill R package <i class="fab fa-r-project"></i>, powered by the distill web framework <i class="fab fa-js"></i></span>.</p>
+<p>This site was made with the distill R package
+<i class="fab fa-r-project"></i>, powered by the distill web framework
+<i class="fab fa-js"></i></span>.</p>
 </div>
 <!--/radix_placeholder_navigation_after_body-->
 

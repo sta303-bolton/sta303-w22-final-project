@@ -242,6 +242,6 @@ Note, you also shouldn't include your API key anywhere as that is private inform
 
 # Other
 
-- If you have convergence issues using `glmer`, consider changing the optimizer: `control=glmerControl(optimizer="bobyqa",  optCtrl=list(maxfun=2e5))`. (add this to you `glmer` cal)
-- You may want to rescale age. `scales::rescale` is pretty handy for this. (Note: there may be other more appropriate ways yo consider age, depending on the research question.)
+- If you have convergence issues using `glmer`, consider changing the optimizer: `control=glmerControl(optimizer="bobyqa",  optCtrl=list(maxfun=2e5))`. (add this to your `glmer` call)
+- You may want to rescale age. `scales::rescale` is pretty handy for this. (Note: there may be other more appropriate ways to consider age, depending on the research question.)
 - You can fit equivalent models in `glmer` and `gam`, but sometimes `gam` fits them faster!

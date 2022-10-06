@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>STA303/1002 Winter 22 Final Project: Writing feedback</title>
@@ -1860,7 +1861,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2031,7 +2035,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.10.1/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2264,43 +2268,90 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#feedback-on-module-3-writing">Feedback on Module 3 writing</a></li>
-<li><a href="#feedback-on-module-4-writing">Feedback on Module 4 writing</a></li>
+<li><a href="#feedback-on-module-3-writing"
+id="toc-feedback-on-module-3-writing">Feedback on Module 3
+writing</a></li>
+<li><a href="#feedback-on-module-4-writing"
+id="toc-feedback-on-module-4-writing">Feedback on Module 4
+writing</a></li>
 </ul>
 </nav>
 </div>
-<p>There have been 5 writing tasks as part of the knowledge basket. The prompts have useful information you may like to be aware of when writing your report, especially <a href="https://sta303-bolton.github.io/sta303-w22-courseguide/knowledge-basket-writing-and-peer-feedback.html#module-3-writing-task">Module 3</a> and <a href="https://sta303-bolton.github.io/sta303-w22-courseguide/knowledge-basket-writing-and-peer-feedback.html#module-4-writing-task">Module 4</a>.</p>
+<p>There have been 5 writing tasks as part of the knowledge basket. The
+prompts have useful information you may like to be aware of when writing
+your report, especially <a
+href="https://sta303-bolton.github.io/sta303-w22-courseguide/knowledge-basket-writing-and-peer-feedback.html#module-3-writing-task">Module
+3</a> and <a
+href="https://sta303-bolton.github.io/sta303-w22-courseguide/knowledge-basket-writing-and-peer-feedback.html#module-4-writing-task">Module
+4</a>.</p>
 <p>Below is feedback from writing TA Ian.</p>
 <h2 id="feedback-on-module-3-writing">Feedback on Module 3 writing</h2>
-<p><a href="https://sta303-bolton.github.io/sta303-w22-courseguide/knowledge-basket-writing-and-peer-feedback.html#module-3-writing-task">This writing prompt</a> asked you to write a <strong>methods section</strong>.</p>
+<p><a
+href="https://sta303-bolton.github.io/sta303-w22-courseguide/knowledge-basket-writing-and-peer-feedback.html#module-3-writing-task">This
+writing prompt</a> asked you to write a <strong>methods
+section</strong>.</p>
 <ul>
-<li><p>Great job with the writing! This is just a reminder that you make sure that all of your sentences are clear and concise. Try to write well structured paragraphs for the methods section rather than a list with details about the methods used.</p></li>
-<li><p>It is helpful to clearly state the purpose of the study or the testable hypotheses at the start of the methods, particularly if no Introduction section is included.</p></li>
-<li><p>Make sure to include the total sample size, source of the data and/or how the data was obtained, and any important data wrangling (i.e., data filtering, calculating new variables) necessary to conduct the analysis.</p></li>
-<li><p>Clearly state the variables of interest: both the response and predictor variables.</p></li>
-<li><p>When presenting a model, it is important to define all model parameters.</p></li>
-<li><p>When using mixed effects models, you should clearly state which variables are fixed and random effects along with the reasoning behind the decision.</p></li>
-<li><p>For the structure of the methods, you can typically follow this general outline:</p>
+<li><p>Great job with the writing! This is just a reminder that you make
+sure that all of your sentences are clear and concise. Try to write well
+structured paragraphs for the methods section rather than a list with
+details about the methods used.</p></li>
+<li><p>It is helpful to clearly state the purpose of the study or the
+testable hypotheses at the start of the methods, particularly if no
+Introduction section is included.</p></li>
+<li><p>Make sure to include the total sample size, source of the data
+and/or how the data was obtained, and any important data wrangling
+(i.e., data filtering, calculating new variables) necessary to conduct
+the analysis.</p></li>
+<li><p>Clearly state the variables of interest: both the response and
+predictor variables.</p></li>
+<li><p>When presenting a model, it is important to define all model
+parameters.</p></li>
+<li><p>When using mixed effects models, you should clearly state which
+variables are fixed and random effects along with the reasoning behind
+the decision.</p></li>
+<li><p>For the structure of the methods, you can typically follow this
+general outline:</p>
 <ul>
 <li><p>Stating the research objectives and purpose of the study</p></li>
-<li><p>Introducing the data and relevant details (i.e., data source, sample size, variables of interest)</p></li>
+<li><p>Introducing the data and relevant details (i.e., data source,
+sample size, variables of interest)</p></li>
 <li><p>The statistical model and/or subsequent data analyses</p></li>
 <li><p>Specific model details</p></li>
 <li><p>Model validation/calibration, if applicable</p></li>
 </ul></li>
 </ul>
 <h2 id="feedback-on-module-4-writing">Feedback on Module 4 writing</h2>
-<p><a href="https://sta303-bolton.github.io/sta303-w22-courseguide/knowledge-basket-writing-and-peer-feedback.html#module-4-writing-task">This writing prompt</a> asked you to write an executive summary.</p>
+<p><a
+href="https://sta303-bolton.github.io/sta303-w22-courseguide/knowledge-basket-writing-and-peer-feedback.html#module-4-writing-task">This
+writing prompt</a> asked you to write an executive summary.</p>
 <ul>
-<li>Executive summaries are very similar to abstracts with the main difference being the targeted audience (see Table in 11.5.1). The main components of an executive summary include background &amp; aim, key findings, and limitations.</li>
-<li>It is important to make sure that the writing style is non-technical as the audience is generally individuals that are not familiar with the specific details of statistical models and data analysis.</li>
-<li>The Background &amp; Aim section should focus on the research question/objectives (explore factors that relate to drinking behaviour on a dry campus) rather than providing background knowledge on Poisson regression models.</li>
-<li>You can mention the type of statistical model used in the analysis and briefly the reasoning behind it (i.e., A zero-inflated Poisson model was used to accurately model the data as this model considers both drinkers and non-drinkers in the survey). Just be careful not to get into the finer details.</li>
-<li>The key findings can focus on the broad findings of the model, such as the mean number of drinks consumed, indicating significant effects between variables, and unimportant predictors of drinking, rather than significance testing and p-values.</li>
-<li>The limitations can be very helpful. Any concerns or caveats about the data and subsequent analysis can be presented here.</li>
-<li>Easy to interpret figures and tables that summarize the data and findings are very helpful in executive summaries.</li>
+<li>Executive summaries are very similar to abstracts with the main
+difference being the targeted audience (see Table in 11.5.1). The main
+components of an executive summary include background &amp; aim, key
+findings, and limitations.</li>
+<li>It is important to make sure that the writing style is non-technical
+as the audience is generally individuals that are not familiar with the
+specific details of statistical models and data analysis.</li>
+<li>The Background &amp; Aim section should focus on the research
+question/objectives (explore factors that relate to drinking behaviour
+on a dry campus) rather than providing background knowledge on Poisson
+regression models.</li>
+<li>You can mention the type of statistical model used in the analysis
+and briefly the reasoning behind it (i.e., A zero-inflated Poisson model
+was used to accurately model the data as this model considers both
+drinkers and non-drinkers in the survey). Just be careful not to get
+into the finer details.</li>
+<li>The key findings can focus on the broad findings of the model, such
+as the mean number of drinks consumed, indicating significant effects
+between variables, and unimportant predictors of drinking, rather than
+significance testing and p-values.</li>
+<li>The limitations can be very helpful. Any concerns or caveats about
+the data and subsequent analysis can be presented here.</li>
+<li>Easy to interpret figures and tables that summarize the data and
+findings are very helpful in executive summaries.</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2316,7 +2367,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">
-<p>This site was made with the distill R package <i class="fab fa-r-project"></i>, powered by the distill web framework <i class="fab fa-js"></i></span>.</p>
+<p>This site was made with the distill R package
+<i class="fab fa-r-project"></i>, powered by the distill web framework
+<i class="fab fa-js"></i></span>.</p>
 </div>
 <!--/radix_placeholder_navigation_after_body-->
 
